@@ -34,6 +34,10 @@
     font-size: 1.12rem !important;
   }
 
+  .tz-home .tz-hero-inner {
+    width: 100%;
+  }
+
   .tz-chip {
     font-size: 1.18rem !important;
   }
@@ -42,6 +46,86 @@
     font-size: 1.12rem !important;
     color: #666 !important;
   }
+
+  /* --- BIG APP CARDS: secondary purple style --- */
+  .tz-home .tz-app-grid{
+    display:grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap:16px;
+    margin-top:18px;
+  }
+
+  .tz-home .tz-app-card{
+    text-decoration:none;
+    border-radius:16px;
+    padding:18px 18px 16px;
+    background: #f4efff;                 /* secondary purple bg */
+    border: 1px solid #dccfff;           /* soft purple border */
+    color: #1b1b1b;
+    box-shadow: 0 8px 22px rgba(20, 0, 60, 0.07);
+    transition: transform .15s ease, box-shadow .15s ease, background .15s ease, border-color .15s ease;
+    display:flex;
+    flex-direction:column;
+    min-height: 170px;
+  }
+
+  .tz-home .tz-app-card:hover{
+    transform: translateY(-2px);
+    background: #efe7ff;
+    border-color: #cbb4ff;
+    box-shadow: 0 12px 28px rgba(20, 0, 60, 0.12);
+  }
+
+  .tz-home .tz-app-card__top{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    margin-bottom:10px;
+  }
+
+  .tz-home .tz-app-icon{
+    font-size:22px;
+    line-height:1;
+  }
+
+  .tz-home .tz-app-pill{
+    font-size:12px;
+    font-weight:600;
+    padding:6px 10px;
+    border-radius:999px;
+    background:#ffffff;
+    border:1px solid #dccfff;
+    color:#4b2bbf;
+  }
+
+  .tz-home .tz-app-title{
+    margin:0 0 6px;
+    font-size:18px;
+    font-weight:800;
+    color:#2a166a;
+  }
+
+  .tz-home .tz-app-desc{
+    margin:0 0 12px;
+    font-size:13.5px;
+    color:#3c3c3c;
+    line-height:1.35;
+  }
+
+  .tz-home .tz-app-cta{
+    margin-top:auto;
+    font-weight:800;
+    color:#6d28d9;  /* purple */
+    font-size:13.5px;
+  }
+
+  /* Responsive */
+  @media (max-width: 1100px){
+    .tz-home .tz-app-grid{ grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  }
+  @media (max-width: 560px){
+    .tz-home .tz-app-grid{ grid-template-columns: 1fr; }
+  }
 </style>
 
 <div class="tz-home">
@@ -49,7 +133,7 @@
   <!-- HERO -->
 
   <section class="tz-hero" style="padding:34px 0 18px;">
-    <div style="max-width:1800px;margin:0 auto;padding:0 18px;">
+    <div class="tz-hero-inner" style="max-width:1800px;margin:0 auto;padding:0 18px;">
       <div style="border:1px solid #eee;border-radius:18px;background:linear-gradient(180deg,#ffffff 0%, #fafafa 100%);padding:24px 18px;">
         <p style="letter-spacing:.10em;text-transform:uppercase;font-size:1.05rem;color:#777;margin:0 0 10px;">Welcome</p>
         <h1 style="font-size:3rem;line-height:1.12;margin:0 0 12px;">All your Tamil tools in one place</h1>
@@ -67,35 +151,49 @@
       <span class="tz-chip" style="display:inline-flex;gap:8px;align-items:center;padding:8px 12px;border-radius:999px;background:#fff;border:1px solid #eee;color:#444;">🔤 Clean conversions</span>
     </div>
 
-    <!-- Primary CTAs -->
-    <div style="display:flex;flex-wrap:wrap;gap:10px;margin:6px 0 0;">
-      <a href="https://tamil.zone/news/" style="display:inline-block;padding:12px 16px;border-radius:12px;background:linear-gradient(135deg,#7a00df,#9a39ff);color:#fff;text-decoration:none;font-size:1.08rem;font-weight:700;box-shadow:0 8px 18px rgba(122,0,223,.25);">Explore News</a>
-      <a href="https://tamil.zone/tamil-name-finder/" style="display:inline-block;padding:12px 16px;border-radius:12px;border:1px solid #dec7ff;background:#f7f1ff;color:#5a1796;text-decoration:none;font-size:1.08rem;font-weight:700;">Baby Name Finder</a>
-      <a href="https://tamil.zone/tamil-bamini/" style="display:inline-block;padding:12px 16px;border-radius:12px;border:1px solid #dec7ff;background:#f7f1ff;color:#5a1796;text-decoration:none;font-size:1.08rem;font-weight:700;">Bamini Converter</a>
-      <a href="https://tamil.zone/tamil-typing/" style="display:inline-block;padding:12px 16px;border-radius:12px;border:1px solid #dec7ff;background:#f7f1ff;color:#5a1796;text-decoration:none;font-size:1.08rem;font-weight:700;">Tamil Typing</a>
-    </div>
-  </div>
+    <!-- BIG APP CARDS (inside the hero card) -->
+    <div class="tz-app-grid">
+      <a class="tz-app-card" href="/news">
+        <div class="tz-app-card__top">
+          <span class="tz-app-icon">📰</span>
+          <span class="tz-app-pill">News</span>
+        </div>
+        <h3 class="tz-app-title">Explore Tamil News</h3>
+        <p class="tz-app-desc">Clean reading with English + Tanglish + Tamil modes, plus featured images.</p>
+        <span class="tz-app-cta">Go to News →</span>
+      </a>
 
-  <!-- Quick Stats row (nice design element) -->
-  <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px;margin:16px 0 0;">
-    <div style="border:1px solid #eee;border-radius:14px;background:#fff;padding:14px;">
-      <div class="tz-meta" style="margin:0 0 6px;">Reading modes</div>
-      <div style="font-size:1.2rem;font-weight:700;color:#111;">English • Tanglish • Tamil</div>
-    </div>
-    <div style="border:1px solid #eee;border-radius:14px;background:#fff;padding:14px;">
-      <div class="tz-meta" style="margin:0 0 6px;">News</div>
-      <div style="font-size:1.2rem;font-weight:700;color:#111;">Curated feeds + clean layout</div>
-    </div>
-    <div style="border:1px solid #eee;border-radius:14px;background:#fff;padding:14px;">
-      <div class="tz-meta" style="margin:0 0 6px;">Baby names</div>
-      <div style="font-size:1.2rem;font-weight:700;color:#111;">Meaning-first discovery</div>
-    </div>
-    <div style="border:1px solid #eee;border-radius:14px;background:#fff;padding:14px;">
-      <div class="tz-meta" style="margin:0 0 6px;">Text tools</div>
-      <div style="font-size:1.2rem;font-weight:700;color:#111;">Bamini ↔ Unicode + more</div>
+      <a class="tz-app-card" href="/baby-name-finder">
+        <div class="tz-app-card__top">
+          <span class="tz-app-icon">👶</span>
+          <span class="tz-app-pill">Baby Names</span>
+        </div>
+        <h3 class="tz-app-title">Find a meaningful name</h3>
+        <p class="tz-app-desc">Search by meaning, style, and origin with fast discovery filters.</p>
+        <span class="tz-app-cta">Open Finder →</span>
+      </a>
+
+      <a class="tz-app-card" href="/bamini">
+        <div class="tz-app-card__top">
+          <span class="tz-app-icon">🔤</span>
+          <span class="tz-app-pill">Converter</span>
+        </div>
+        <h3 class="tz-app-title">Bamini → Unicode</h3>
+        <p class="tz-app-desc">Paste text and convert instantly with copy-ready clean output.</p>
+        <span class="tz-app-cta">Open Converter →</span>
+      </a>
+
+      <a class="tz-app-card" href="/typing">
+        <div class="tz-app-card__top">
+          <span class="tz-app-icon">⌨️</span>
+          <span class="tz-app-pill">Typing</span>
+        </div>
+        <h3 class="tz-app-title">Tamil Typing tools</h3>
+        <p class="tz-app-desc">Type, format, and work faster with the growing Tamil toolkit.</p>
+        <span class="tz-app-cta">Open Typing →</span>
+      </a>
     </div>
   </div>
-</div>
 
   </section>
 
