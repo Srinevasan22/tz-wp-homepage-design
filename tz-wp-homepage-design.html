@@ -116,6 +116,40 @@
   @media (max-width: 560px){
     .tz-home .tz-app-grid{ grid-template-columns: 1fr; }
   }
+
+  /* =========================
+     Section 2-col layout system
+     ========================= */
+  .tz-home .tz-section {
+    display: grid;
+    grid-template-columns: 1.15fr 0.85fr;
+    gap: 22px;
+    align-items: start;
+  }
+
+  .tz-home .tz-section .tz-main { grid-column: 1; }
+  .tz-home .tz-section .tz-aside { grid-column: 2; }
+
+  .tz-home .tz-section.is-reverse {
+    grid-template-columns: 0.85fr 1.15fr;
+  }
+
+  .tz-home .tz-section.is-reverse .tz-aside { grid-column: 1; }
+  .tz-home .tz-section.is-reverse .tz-main { grid-column: 2; }
+
+  @media (max-width: 860px) {
+    .tz-home .tz-section,
+    .tz-home .tz-section.is-reverse {
+      grid-template-columns: 1fr;
+    }
+
+    .tz-home .tz-section .tz-main,
+    .tz-home .tz-section .tz-aside,
+    .tz-home .tz-section.is-reverse .tz-main,
+    .tz-home .tz-section.is-reverse .tz-aside {
+      grid-column: 1;
+    }
+  }
 </style>
 
 <div class="tz-home">
@@ -207,43 +241,45 @@
   <!-- SECTION 1: BABY NAMES -->
 
   <section class="tz-app tz-app-baby" style="padding:24px 0;">
-    <div style="max-width:1800px;margin:0 auto;padding:0 18px;display:flex;flex-wrap:wrap;gap:22px;align-items:center;flex-direction:row-reverse;">
-      <div style="flex:1;min-width:280px;">
-        <div style="display:inline-flex;gap:8px;align-items:center;padding:8px 13px;border:1px solid #eee;border-radius:999px;color:#444;font-size:1.02rem;background:#fff;">
-          👶 <strong>Baby Name Finder</strong>
+    <div style="max-width:1800px;margin:0 auto;padding:0 18px;">
+      <div class="tz-section is-reverse">
+        <div class="tz-main">
+          <div style="display:inline-flex;gap:8px;align-items:center;padding:8px 13px;border:1px solid #eee;border-radius:999px;color:#444;font-size:1.02rem;background:#fff;">
+            👶 <strong>Baby Name Finder</strong>
+          </div>
+
+          <h2 style="margin:12px 0 12px;font-size:2.05rem;">Find meaningful Tamil baby names</h2>
+
+          <p style="margin:0 0 16px;color:#555;line-height:1.8;font-size:1.08rem;">
+            Search names by meaning, origin, gender, and style — with a premium browsing experience.
+          </p>
+
+          <div style="display:flex;flex-wrap:wrap;gap:8px;margin:0 0 16px;">
+            <span class="tz-chip" style="padding:7px 11px;border-radius:999px;border:1px solid #eee;background:#fafafa;color:#555;">🔎 Smart filters</span>
+            <span class="tz-chip" style="padding:7px 11px;border-radius:999px;border:1px solid #eee;background:#fafafa;color:#555;">💛 Favorites</span>
+            <span class="tz-chip" style="padding:7px 11px;border-radius:999px;border:1px solid #eee;background:#fafafa;color:#555;">📖 Meaning-first</span>
+          </div>
+
+          <ul style="margin:0 0 18px;color:#555;line-height:1.8;padding-left:18px;font-size:1.02rem;">
+            <li>Smart filters for fast discovery</li>
+            <li>Meaning-first browsing</li>
+            <li>Favorites and sharing-ready results</li>
+          </ul>
+
+          <a href="https://tamil.zone/tamil-name-finder/" style="display:inline-block;padding:12px 16px;border-radius:12px;border:1px solid #dec7ff;background:#f7f1ff;color:#5a1796;text-decoration:none;font-size:1.02rem;font-weight:700;">Find a Name →</a>
         </div>
 
-    <h2 style="margin:12px 0 12px;font-size:2.05rem;">Find meaningful Tamil baby names</h2>
-
-    <p style="margin:0 0 16px;color:#555;line-height:1.8;font-size:1.08rem;">
-      Search names by meaning, origin, gender, and style — with a premium browsing experience.
-    </p>
-
-    <div style="display:flex;flex-wrap:wrap;gap:8px;margin:0 0 16px;">
-      <span class="tz-chip" style="padding:7px 11px;border-radius:999px;border:1px solid #eee;background:#fafafa;color:#555;">🔎 Smart filters</span>
-      <span class="tz-chip" style="padding:7px 11px;border-radius:999px;border:1px solid #eee;background:#fafafa;color:#555;">💛 Favorites</span>
-      <span class="tz-chip" style="padding:7px 11px;border-radius:999px;border:1px solid #eee;background:#fafafa;color:#555;">📖 Meaning-first</span>
+        <div class="tz-aside">
+          <div style="border:1px solid #eee;border-radius:18px;padding:18px;background:#fff;">
+            <p style="margin:0 0 10px;color:#777;font-size:1rem;">Suggested highlight</p>
+            <h3 style="margin:0 0 8px;font-size:1.3rem;">Name of the day</h3>
+            <p style="margin:0;color:#555;line-height:1.75;font-size:1.02rem;">
+              Featuring one name daily is great for SEO and encourages returning visitors.
+            </p>
+          </div>
+        </div>
+      </div>
     </div>
-
-    <ul style="margin:0 0 18px;color:#555;line-height:1.8;padding-left:18px;font-size:1.02rem;">
-      <li>Smart filters for fast discovery</li>
-      <li>Meaning-first browsing</li>
-      <li>Favorites and sharing-ready results</li>
-    </ul>
-
-    <a href="https://tamil.zone/tamil-name-finder/" style="display:inline-block;padding:12px 16px;border-radius:12px;border:1px solid #dec7ff;background:#f7f1ff;color:#5a1796;text-decoration:none;font-size:1.02rem;font-weight:700;">Find a Name →</a>
-  </div>
-
-  <div style="flex:1;min-width:280px;">
-    <div style="border:1px solid #eee;border-radius:18px;padding:18px;background:#fff;">
-      <p style="margin:0 0 10px;color:#777;font-size:1rem;">Suggested highlight</p>
-      <h3 style="margin:0 0 8px;font-size:1.3rem;">Name of the day</h3>
-      <p style="margin:0;color:#555;line-height:1.75;font-size:1.02rem;">
-        Featuring one name daily is great for SEO and encourages returning visitors.
-      </p>
-    </div>
-  </div>
-</div>
 
   </section>
 
@@ -252,43 +288,45 @@
   <!-- SECTION 2: NEWS -->
 
   <section class="tz-app tz-app-news" style="padding:24px 0;">
-    <div style="max-width:1800px;margin:0 auto;padding:0 18px;display:flex;flex-wrap:wrap;gap:22px;align-items:center;">
-      <div style="flex:1;min-width:280px;">
-        <div style="display:inline-flex;gap:8px;align-items:center;padding:8px 13px;border:1px solid #eee;border-radius:999px;color:#444;font-size:1.02rem;background:#fff;">
-          📰 <strong>News</strong> <span style="color:#888;">/news</span>
+    <div style="max-width:1800px;margin:0 auto;padding:0 18px;">
+      <div class="tz-section">
+        <div class="tz-main">
+          <div style="display:inline-flex;gap:8px;align-items:center;padding:8px 13px;border:1px solid #eee;border-radius:999px;color:#444;font-size:1.02rem;background:#fff;">
+            📰 <strong>News</strong> <span style="color:#888;">/news</span>
+          </div>
+
+          <h2 style="margin:12px 0 12px;font-size:2.05rem;">Tamil news — clean, readable, and fast</h2>
+
+          <p style="margin:0 0 16px;color:#555;line-height:1.8;font-size:1.08rem;">
+            A curated news feed in Tamil, with a smooth reading experience and optional translations. Built for quick scanning and deep reading.
+          </p>
+
+          <div style="display:flex;flex-wrap:wrap;gap:8px;margin:0 0 16px;">
+            <span class="tz-chip" style="padding:7px 11px;border-radius:999px;border:1px solid #eee;background:#fafafa;color:#555;">📌 Featured posts</span>
+            <span class="tz-chip" style="padding:7px 11px;border-radius:999px;border:1px solid #eee;background:#fafafa;color:#555;">🖼️ Auto images</span>
+            <span class="tz-chip" style="padding:7px 11px;border-radius:999px;border:1px solid #eee;background:#fafafa;color:#555;">🔁 Fresh updates</span>
+          </div>
+
+          <ul style="margin:0 0 18px;color:#555;line-height:1.8;padding-left:18px;font-size:1.02rem;">
+            <li>Readable layout (mobile-first)</li>
+            <li>English + Tanglish + Tamil on article pages</li>
+            <li>Featured images automatically added</li>
+          </ul>
+
+          <a href="https://tamil.zone/news/" style="display:inline-block;padding:12px 16px;border-radius:12px;background:linear-gradient(135deg,#7a00df,#9a39ff);color:#fff;text-decoration:none;font-size:1.02rem;font-weight:700;box-shadow:0 8px 18px rgba(122,0,223,.25);">Go to News →</a>
         </div>
 
-    <h2 style="margin:12px 0 12px;font-size:2.05rem;">Tamil news — clean, readable, and fast</h2>
-
-    <p style="margin:0 0 16px;color:#555;line-height:1.8;font-size:1.08rem;">
-      A curated news feed in Tamil, with a smooth reading experience and optional translations. Built for quick scanning and deep reading.
-    </p>
-
-    <div style="display:flex;flex-wrap:wrap;gap:8px;margin:0 0 16px;">
-      <span class="tz-chip" style="padding:7px 11px;border-radius:999px;border:1px solid #eee;background:#fafafa;color:#555;">📌 Featured posts</span>
-      <span class="tz-chip" style="padding:7px 11px;border-radius:999px;border:1px solid #eee;background:#fafafa;color:#555;">🖼️ Auto images</span>
-      <span class="tz-chip" style="padding:7px 11px;border-radius:999px;border:1px solid #eee;background:#fafafa;color:#555;">🔁 Fresh updates</span>
+        <div class="tz-aside">
+          <div style="border:1px solid #eee;border-radius:18px;padding:18px;background:#fafafa;">
+            <p style="margin:0 0 10px;color:#777;font-size:1rem;">Suggested highlight</p>
+            <h3 style="margin:0 0 8px;font-size:1.3rem;">Today’s top categories</h3>
+            <p style="margin:0;color:#555;line-height:1.75;font-size:1.02rem;">
+              Pick 4–6 categories to feature on the News page (Tech, Finance, Sports…) so readers find content instantly.
+            </p>
+          </div>
+        </div>
+      </div>
     </div>
-
-    <ul style="margin:0 0 18px;color:#555;line-height:1.8;padding-left:18px;font-size:1.02rem;">
-      <li>Readable layout (mobile-first)</li>
-      <li>English + Tanglish + Tamil on article pages</li>
-      <li>Featured images automatically added</li>
-    </ul>
-
-    <a href="https://tamil.zone/news/" style="display:inline-block;padding:12px 16px;border-radius:12px;background:linear-gradient(135deg,#7a00df,#9a39ff);color:#fff;text-decoration:none;font-size:1.02rem;font-weight:700;box-shadow:0 8px 18px rgba(122,0,223,.25);">Go to News →</a>
-  </div>
-
-  <div style="flex:1;min-width:280px;">
-    <div style="border:1px solid #eee;border-radius:18px;padding:18px;background:#fafafa;">
-      <p style="margin:0 0 10px;color:#777;font-size:1rem;">Suggested highlight</p>
-      <h3 style="margin:0 0 8px;font-size:1.3rem;">Today’s top categories</h3>
-      <p style="margin:0;color:#555;line-height:1.75;font-size:1.02rem;">
-        Pick 4–6 categories to feature on the News page (Tech, Finance, Sports…) so readers find content instantly.
-      </p>
-    </div>
-  </div>
-</div>
 
   </section>
 
@@ -297,43 +335,45 @@
   <!-- SECTION 3: BAMINI -->
 
   <section class="tz-app tz-app-bamini" style="padding:24px 0;">
-    <div style="max-width:1800px;margin:0 auto;padding:0 18px;display:flex;flex-wrap:wrap;gap:22px;align-items:center;">
-      <div style="flex:1;min-width:280px;">
-        <div style="display:inline-flex;gap:8px;align-items:center;padding:8px 13px;border:1px solid #eee;border-radius:999px;color:#444;font-size:1.02rem;background:#fff;">
-          🔤 <strong>Bamini Converter</strong>
+    <div style="max-width:1800px;margin:0 auto;padding:0 18px;">
+      <div class="tz-section is-reverse">
+        <div class="tz-main">
+          <div style="display:inline-flex;gap:8px;align-items:center;padding:8px 13px;border:1px solid #eee;border-radius:999px;color:#444;font-size:1.02rem;background:#fff;">
+            🔤 <strong>Bamini Converter</strong>
+          </div>
+
+          <h2 style="margin:12px 0 12px;font-size:2.05rem;">Convert Bamini ↔ Unicode instantly</h2>
+
+          <p style="margin:0 0 16px;color:#555;line-height:1.8;font-size:1.08rem;">
+            Paste your text and convert in seconds — reliable output, copy-ready formatting, and fast performance.
+          </p>
+
+          <div style="display:flex;flex-wrap:wrap;gap:8px;margin:0 0 16px;">
+            <span class="tz-chip" style="padding:7px 11px;border-radius:999px;border:1px solid #eee;background:#fafafa;color:#555;">⚡ Instant</span>
+            <span class="tz-chip" style="padding:7px 11px;border-radius:999px;border:1px solid #eee;background:#fafafa;color:#555;">📋 Copy-ready</span>
+            <span class="tz-chip" style="padding:7px 11px;border-radius:999px;border:1px solid #eee;background:#fafafa;color:#555;">🔁 Two-way</span>
+          </div>
+
+          <ul style="margin:0 0 18px;color:#555;line-height:1.8;padding-left:18px;font-size:1.02rem;">
+            <li>Two-way conversion</li>
+            <li>Copy & download-friendly output</li>
+            <li>Built for real-world documents</li>
+          </ul>
+
+          <a href="https://tamil.zone/tamil-bamini/" style="display:inline-block;padding:12px 16px;border-radius:12px;border:1px solid #dec7ff;background:#f7f1ff;color:#5a1796;text-decoration:none;font-size:1.02rem;font-weight:700;">Open Converter →</a>
         </div>
 
-    <h2 style="margin:12px 0 12px;font-size:2.05rem;">Convert Bamini ↔ Unicode instantly</h2>
-
-    <p style="margin:0 0 16px;color:#555;line-height:1.8;font-size:1.08rem;">
-      Paste your text and convert in seconds — reliable output, copy-ready formatting, and fast performance.
-    </p>
-
-    <div style="display:flex;flex-wrap:wrap;gap:8px;margin:0 0 16px;">
-      <span class="tz-chip" style="padding:7px 11px;border-radius:999px;border:1px solid #eee;background:#fafafa;color:#555;">⚡ Instant</span>
-      <span class="tz-chip" style="padding:7px 11px;border-radius:999px;border:1px solid #eee;background:#fafafa;color:#555;">📋 Copy-ready</span>
-      <span class="tz-chip" style="padding:7px 11px;border-radius:999px;border:1px solid #eee;background:#fafafa;color:#555;">🔁 Two-way</span>
+        <div class="tz-aside">
+          <div style="border:1px solid #eee;border-radius:18px;padding:18px;background:#fafafa;">
+            <p style="margin:0 0 10px;color:#777;font-size:1rem;">Suggested highlight</p>
+            <h3 style="margin:0 0 8px;font-size:1.3rem;">Paste • Convert • Done</h3>
+            <p style="margin:0;color:#555;line-height:1.75;font-size:1.02rem;">
+              Later you can add a small screenshot or mini demo preview for even more trust.
+            </p>
+          </div>
+        </div>
+      </div>
     </div>
-
-    <ul style="margin:0 0 18px;color:#555;line-height:1.8;padding-left:18px;font-size:1.02rem;">
-      <li>Two-way conversion</li>
-      <li>Copy & download-friendly output</li>
-      <li>Built for real-world documents</li>
-    </ul>
-
-    <a href="https://tamil.zone/tamil-bamini/" style="display:inline-block;padding:12px 16px;border-radius:12px;border:1px solid #dec7ff;background:#f7f1ff;color:#5a1796;text-decoration:none;font-size:1.02rem;font-weight:700;">Open Converter →</a>
-  </div>
-
-  <div style="flex:1;min-width:280px;">
-    <div style="border:1px solid #eee;border-radius:18px;padding:18px;background:#fafafa;">
-      <p style="margin:0 0 10px;color:#777;font-size:1rem;">Suggested highlight</p>
-      <h3 style="margin:0 0 8px;font-size:1.3rem;">Paste • Convert • Done</h3>
-      <p style="margin:0;color:#555;line-height:1.75;font-size:1.02rem;">
-        Later you can add a small screenshot or mini demo preview for even more trust.
-      </p>
-    </div>
-  </div>
-</div>
 
   </section>
 
@@ -342,43 +382,45 @@
   <!-- SECTION 4: MORE TOOLS -->
 
   <section class="tz-app tz-app-tools" style="padding:24px 0 16px;">
-    <div style="max-width:1800px;margin:0 auto;padding:0 18px;display:flex;flex-wrap:wrap;gap:22px;align-items:center;flex-direction:row-reverse;">
-      <div style="flex:1;min-width:280px;">
-        <div style="display:inline-flex;gap:8px;align-items:center;padding:8px 13px;border:1px solid #eee;border-radius:999px;color:#444;font-size:1.02rem;background:#fff;">
-          🧰 <strong>More Tools</strong>
+    <div style="max-width:1800px;margin:0 auto;padding:0 18px;">
+      <div class="tz-section">
+        <div class="tz-main">
+          <div style="display:inline-flex;gap:8px;align-items:center;padding:8px 13px;border:1px solid #eee;border-radius:999px;color:#444;font-size:1.02rem;background:#fff;">
+            🧰 <strong>More Tools</strong>
+          </div>
+
+          <h2 style="margin:12px 0 12px;font-size:2.05rem;">A growing Tamil toolkit</h2>
+
+          <p style="margin:0 0 16px;color:#555;line-height:1.8;font-size:1.08rem;">
+            From typing helpers to language utilities — Tamil.Zone is built to keep expanding.
+          </p>
+
+          <div style="display:flex;flex-wrap:wrap;gap:8px;margin:0 0 16px;">
+            <span class="tz-chip" style="padding:7px 11px;border-radius:999px;border:1px solid #eee;background:#fafafa;color:#555;">⌨️ Typing</span>
+            <span class="tz-chip" style="padding:7px 11px;border-radius:999px;border:1px solid #eee;background:#fafafa;color:#555;">🧩 Utilities</span>
+            <span class="tz-chip" style="padding:7px 11px;border-radius:999px;border:1px solid #eee;background:#fafafa;color:#555;">🧠 Smart features</span>
+          </div>
+
+          <ul style="margin:0 0 18px;color:#555;line-height:1.8;padding-left:18px;font-size:1.02rem;">
+            <li>Typing helpers</li>
+            <li>Converters & utilities</li>
+            <li>New tools added regularly</li>
+          </ul>
+
+          <a href="https://tamil.zone/tamil-typing/" style="display:inline-block;padding:12px 16px;border-radius:12px;background:linear-gradient(135deg,#7a00df,#9a39ff);color:#fff;text-decoration:none;font-size:1.02rem;font-weight:700;box-shadow:0 8px 18px rgba(122,0,223,.25);">Browse Tools →</a>
         </div>
 
-    <h2 style="margin:12px 0 12px;font-size:2.05rem;">A growing Tamil toolkit</h2>
-
-    <p style="margin:0 0 16px;color:#555;line-height:1.8;font-size:1.08rem;">
-      From typing helpers to language utilities — Tamil.Zone is built to keep expanding.
-    </p>
-
-    <div style="display:flex;flex-wrap:wrap;gap:8px;margin:0 0 16px;">
-      <span class="tz-chip" style="padding:7px 11px;border-radius:999px;border:1px solid #eee;background:#fafafa;color:#555;">⌨️ Typing</span>
-      <span class="tz-chip" style="padding:7px 11px;border-radius:999px;border:1px solid #eee;background:#fafafa;color:#555;">🧩 Utilities</span>
-      <span class="tz-chip" style="padding:7px 11px;border-radius:999px;border:1px solid #eee;background:#fafafa;color:#555;">🧠 Smart features</span>
+        <div class="tz-aside">
+          <div style="border:1px solid #eee;border-radius:18px;padding:18px;background:#fff;">
+            <p style="margin:0 0 10px;color:#777;font-size:1rem;">Suggested highlight</p>
+            <h3 style="margin:0 0 8px;font-size:1.3rem;">What’s next?</h3>
+            <p style="margin:0;color:#555;line-height:1.75;font-size:1.02rem;">
+              You can use this space for “Coming soon” tools or a simple newsletter signup prompt.
+            </p>
+          </div>
+        </div>
+      </div>
     </div>
-
-    <ul style="margin:0 0 18px;color:#555;line-height:1.8;padding-left:18px;font-size:1.02rem;">
-      <li>Typing helpers</li>
-      <li>Converters & utilities</li>
-      <li>New tools added regularly</li>
-    </ul>
-
-    <a href="https://tamil.zone/tamil-typing/" style="display:inline-block;padding:12px 16px;border-radius:12px;background:linear-gradient(135deg,#7a00df,#9a39ff);color:#fff;text-decoration:none;font-size:1.02rem;font-weight:700;box-shadow:0 8px 18px rgba(122,0,223,.25);">Browse Tools →</a>
-  </div>
-
-  <div style="flex:1;min-width:280px;">
-    <div style="border:1px solid #eee;border-radius:18px;padding:18px;background:#fff;">
-      <p style="margin:0 0 10px;color:#777;font-size:1rem;">Suggested highlight</p>
-      <h3 style="margin:0 0 8px;font-size:1.3rem;">What’s next?</h3>
-      <p style="margin:0;color:#555;line-height:1.75;font-size:1.02rem;">
-        You can use this space for “Coming soon” tools or a simple newsletter signup prompt.
-      </p>
-    </div>
-  </div>
-</div>
 
   </section>
 
