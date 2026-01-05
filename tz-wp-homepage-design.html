@@ -122,42 +122,53 @@
   }
 
   /* =========================
-     Section 2-col layout system
+     Section 2-col layout system (FIXED ALIGNMENT)
+     Uses grid areas to prevent drift / row drop issues
      ========================= */
+
   .tz-home .tz-section {
     display: grid;
     grid-template-columns: 1.15fr 0.85fr;
+    grid-template-areas: "main aside";
     gap: 22px;
     align-items: start;
-    max-width: 1240px;
+
+    /* IMPORTANT: align all sections the same way */
+    width: 100%;
+    max-width: 100%;
+    margin: 0;
   }
 
-  .tz-home .tz-section .tz-main { grid-column: 1; }
-  .tz-home .tz-section .tz-aside { grid-column: 2; }
+  .tz-home .tz-section .tz-main {
+    grid-area: main;
+    justify-self: stretch;
+    align-self: start;
+    width: 100%;
+    text-align: left !important;
+  }
 
+  .tz-home .tz-section .tz-aside {
+    grid-area: aside;
+    justify-self: stretch;
+    align-self: start !important;
+  }
+
+  /* Reverse sections swap areas ONLY (no horizontal shifting) */
   .tz-home .tz-section.is-reverse {
     grid-template-columns: 0.85fr 1.15fr;
-    margin-left: auto;
-    margin-right: 0;
+    grid-template-areas: "aside main";
+    margin: 0;          /* REMOVE the previous margin-left:auto trick */
   }
 
-  .tz-home .tz-section.is-reverse .tz-aside { grid-column: 1; }
-  .tz-home .tz-section.is-reverse .tz-main { grid-column: 2; }
-
+  /* Mobile: stack in a consistent order */
   @media (max-width: 860px) {
     .tz-home .tz-section,
     .tz-home .tz-section.is-reverse {
       grid-template-columns: 1fr;
-      max-width: none;
-      margin-left: 0;
-      margin-right: 0;
-    }
-
-    .tz-home .tz-section .tz-main,
-    .tz-home .tz-section .tz-aside,
-    .tz-home .tz-section.is-reverse .tz-main,
-    .tz-home .tz-section.is-reverse .tz-aside {
-      grid-column: 1;
+      grid-template-areas:
+        "main"
+        "aside";
+      gap: 16px;
     }
   }
 
@@ -169,17 +180,10 @@
     width: 100%;
   }
 
-  .tz-home .tz-section .tz-main,
-  .tz-home .tz-section .tz-main * {
-    text-align: left !important;
-  }
-
   .tz-home .tz-section .tz-main h2,
   .tz-home .tz-section .tz-main p,
   .tz-home .tz-section .tz-main ul,
-  .tz-home .tz-section .tz-main .tz-badge,
-  .tz-home .tz-section .tz-main .tz-chip-row,
-  .tz-home .tz-section .tz-main .tz-btn {
+  .tz-home .tz-section .tz-main li {
     text-align: left !important;
   }
 
