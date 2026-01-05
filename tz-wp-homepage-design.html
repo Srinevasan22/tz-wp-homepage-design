@@ -67,6 +67,7 @@
     display:flex;
     flex-direction:column;
     min-height: 170px;
+    cursor: pointer;
   }
 
   .tz-home .tz-app-card:hover{
@@ -125,11 +126,11 @@
     <div class="tz-hero-inner" style="max-width:1800px;margin:0 auto;padding:0 18px;">
       <div style="border:1px solid #eee;border-radius:18px;background:linear-gradient(180deg,#ffffff 0%, #fafafa 100%);padding:24px 18px;">
         <p style="letter-spacing:.10em;text-transform:uppercase;font-size:1.05rem;color:#777;margin:0 0 10px;">Welcome</p>
-        <h1 style="font-size:3rem;line-height:1.12;margin:0 0 12px;">All your Tamil tools in one place</h1>
+        <h1 style="font-size:3rem;line-height:1.12;margin:0 0 12px;">Everything Tamil — Names, News & Language Tools</h1>
 
     <!-- Short intro requested -->
     <p style="font-size:1.2rem;line-height:1.85;color:#555;margin:0 0 18px;max-width:860px;">
-      Tamil.Zone brings together a curated Tamil news feed, a meaningful baby name finder, and fast text tools like Bamini ↔ Unicode conversion — with a clean, premium reading experience.
+      Discover meaningful Tamil baby names, read clean Tamil news, and use fast language tools like Bamini ↔ Unicode conversion — all in one place.
     </p>
 
     <!-- Quick chips -->
@@ -140,13 +141,36 @@
       <span class="tz-chip" style="display:inline-flex;gap:8px;align-items:center;padding:8px 12px;border-radius:999px;background:#fff;border:1px solid #eee;color:#444;">🔤 Clean conversions</span>
     </div>
 
+    <div class="tz-home-cta" style="display:flex;flex-wrap:wrap;gap:10px;margin-top:14px;">
+      <a href="https://tamil.zone/tamil-name-finder/"
+         style="display:inline-block;padding:12px 16px;border-radius:12px;background:linear-gradient(135deg,#7a00df,#9a39ff);color:#fff;text-decoration:none;font-weight:800;box-shadow:0 8px 18px rgba(122,0,223,.25);">
+        Explore Baby Names →
+      </a>
+
+      <a href="https://tamil.zone/tamil-bamini/"
+         style="display:inline-block;padding:12px 16px;border-radius:12px;border:1px solid #dec7ff;background:#f7f1ff;color:#5a1796;text-decoration:none;font-weight:800;">
+        Open Converter →
+      </a>
+    </div>
+
+    <div class="tz-why" style="margin-top:14px;display:flex;flex-wrap:wrap;gap:10px;align-items:center;">
+      <div style="font-weight:900;color:#2b0a45;">Why Tamil.Zone</div>
+
+      <div style="display:flex;flex-wrap:wrap;gap:8px;">
+        <span style="padding:6px 10px;border-radius:999px;background:#f4f0ff;color:#4b1a7a;font-weight:700;">Fast & clean</span>
+        <span style="padding:6px 10px;border-radius:999px;background:#f4f0ff;color:#4b1a7a;font-weight:700;">Meaning-first names</span>
+        <span style="padding:6px 10px;border-radius:999px;background:#f4f0ff;color:#4b1a7a;font-weight:700;">Readable news</span>
+        <span style="padding:6px 10px;border-radius:999px;background:#f4f0ff;color:#4b1a7a;font-weight:700;">Growing toolkit</span>
+      </div>
+    </div>
+
     <!-- BIG APP CARDS (inside the hero card) -->
     <div class="tz-app-grid">
       <a class="tz-app-card" href="/news">
         <div class="tz-app-card__top">
           <span class="tz-app-icon">📰</span>
         </div>
-        <h3 class="tz-app-title">Explore Tamil News</h3>
+        <h3 class="tz-app-title">Read Tamil News →</h3>
         <p class="tz-app-desc">Clean reading with English + Tanglish + Tamil modes, plus featured images.</p>
       </a>
 
@@ -154,7 +178,7 @@
         <div class="tz-app-card__top">
           <span class="tz-app-icon">👶</span>
         </div>
-        <h3 class="tz-app-title">Find a meaningful name</h3>
+        <h3 class="tz-app-title">Search Baby Names →</h3>
         <p class="tz-app-desc">Search by meaning, style, and origin with fast discovery filters.</p>
       </a>
 
@@ -162,7 +186,7 @@
         <div class="tz-app-card__top">
           <span class="tz-app-icon">🔤</span>
         </div>
-        <h3 class="tz-app-title">Bamini → Unicode</h3>
+        <h3 class="tz-app-title">Convert Bamini → Unicode →</h3>
         <p class="tz-app-desc">Paste text and convert instantly with copy-ready clean output.</p>
       </a>
 
@@ -170,7 +194,7 @@
         <div class="tz-app-card__top">
           <span class="tz-app-icon">⌨️</span>
         </div>
-        <h3 class="tz-app-title">Tamil Typing tools</h3>
+        <h3 class="tz-app-title">Use Tamil Typing Tools →</h3>
         <p class="tz-app-desc">Type, format, and work faster with the growing Tamil toolkit.</p>
       </a>
     </div>
@@ -180,52 +204,7 @@
 
   <hr style="border:none;border-top:1px solid #eee;margin:24px 0;">
 
-  <!-- SECTION 1: NEWS -->
-
-  <section class="tz-app tz-app-news" style="padding:24px 0;">
-    <div style="max-width:1800px;margin:0 auto;padding:0 18px;display:flex;flex-wrap:wrap;gap:22px;align-items:center;">
-      <div style="flex:1;min-width:280px;">
-        <div style="display:inline-flex;gap:8px;align-items:center;padding:8px 13px;border:1px solid #eee;border-radius:999px;color:#444;font-size:1.02rem;background:#fff;">
-          📰 <strong>News</strong> <span style="color:#888;">/news</span>
-        </div>
-
-    <h2 style="margin:12px 0 12px;font-size:2.05rem;">Tamil news — clean, readable, and fast</h2>
-
-    <p style="margin:0 0 16px;color:#555;line-height:1.8;font-size:1.08rem;">
-      A curated news feed in Tamil, with a smooth reading experience and optional translations. Built for quick scanning and deep reading.
-    </p>
-
-    <div style="display:flex;flex-wrap:wrap;gap:8px;margin:0 0 16px;">
-      <span class="tz-chip" style="padding:7px 11px;border-radius:999px;border:1px solid #eee;background:#fafafa;color:#555;">📌 Featured posts</span>
-      <span class="tz-chip" style="padding:7px 11px;border-radius:999px;border:1px solid #eee;background:#fafafa;color:#555;">🖼️ Auto images</span>
-      <span class="tz-chip" style="padding:7px 11px;border-radius:999px;border:1px solid #eee;background:#fafafa;color:#555;">🔁 Fresh updates</span>
-    </div>
-
-    <ul style="margin:0 0 18px;color:#555;line-height:1.8;padding-left:18px;font-size:1.02rem;">
-      <li>Readable layout (mobile-first)</li>
-      <li>English + Tanglish + Tamil on article pages</li>
-      <li>Featured images automatically added</li>
-    </ul>
-
-    <a href="https://tamil.zone/news/" style="display:inline-block;padding:12px 16px;border-radius:12px;background:linear-gradient(135deg,#7a00df,#9a39ff);color:#fff;text-decoration:none;font-size:1.02rem;font-weight:700;box-shadow:0 8px 18px rgba(122,0,223,.25);">Go to News →</a>
-  </div>
-
-  <div style="flex:1;min-width:280px;">
-    <div style="border:1px solid #eee;border-radius:18px;padding:18px;background:#fafafa;">
-      <p style="margin:0 0 10px;color:#777;font-size:1rem;">Suggested highlight</p>
-      <h3 style="margin:0 0 8px;font-size:1.3rem;">Today’s top categories</h3>
-      <p style="margin:0;color:#555;line-height:1.75;font-size:1.02rem;">
-        Pick 4–6 categories to feature on the News page (Tech, Finance, Sports…) so readers find content instantly.
-      </p>
-    </div>
-  </div>
-</div>
-
-  </section>
-
-  <hr style="border:none;border-top:1px solid #eee;margin:24px 0;">
-
-  <!-- SECTION 2: BABY NAMES -->
+  <!-- SECTION 1: BABY NAMES -->
 
   <section class="tz-app tz-app-baby" style="padding:24px 0;">
     <div style="max-width:1800px;margin:0 auto;padding:0 18px;display:flex;flex-wrap:wrap;gap:22px;align-items:center;flex-direction:row-reverse;">
@@ -261,6 +240,51 @@
       <h3 style="margin:0 0 8px;font-size:1.3rem;">Name of the day</h3>
       <p style="margin:0;color:#555;line-height:1.75;font-size:1.02rem;">
         Featuring one name daily is great for SEO and encourages returning visitors.
+      </p>
+    </div>
+  </div>
+</div>
+
+  </section>
+
+  <hr style="border:none;border-top:1px solid #eee;margin:24px 0;">
+
+  <!-- SECTION 2: NEWS -->
+
+  <section class="tz-app tz-app-news" style="padding:24px 0;">
+    <div style="max-width:1800px;margin:0 auto;padding:0 18px;display:flex;flex-wrap:wrap;gap:22px;align-items:center;">
+      <div style="flex:1;min-width:280px;">
+        <div style="display:inline-flex;gap:8px;align-items:center;padding:8px 13px;border:1px solid #eee;border-radius:999px;color:#444;font-size:1.02rem;background:#fff;">
+          📰 <strong>News</strong> <span style="color:#888;">/news</span>
+        </div>
+
+    <h2 style="margin:12px 0 12px;font-size:2.05rem;">Tamil news — clean, readable, and fast</h2>
+
+    <p style="margin:0 0 16px;color:#555;line-height:1.8;font-size:1.08rem;">
+      A curated news feed in Tamil, with a smooth reading experience and optional translations. Built for quick scanning and deep reading.
+    </p>
+
+    <div style="display:flex;flex-wrap:wrap;gap:8px;margin:0 0 16px;">
+      <span class="tz-chip" style="padding:7px 11px;border-radius:999px;border:1px solid #eee;background:#fafafa;color:#555;">📌 Featured posts</span>
+      <span class="tz-chip" style="padding:7px 11px;border-radius:999px;border:1px solid #eee;background:#fafafa;color:#555;">🖼️ Auto images</span>
+      <span class="tz-chip" style="padding:7px 11px;border-radius:999px;border:1px solid #eee;background:#fafafa;color:#555;">🔁 Fresh updates</span>
+    </div>
+
+    <ul style="margin:0 0 18px;color:#555;line-height:1.8;padding-left:18px;font-size:1.02rem;">
+      <li>Readable layout (mobile-first)</li>
+      <li>English + Tanglish + Tamil on article pages</li>
+      <li>Featured images automatically added</li>
+    </ul>
+
+    <a href="https://tamil.zone/news/" style="display:inline-block;padding:12px 16px;border-radius:12px;background:linear-gradient(135deg,#7a00df,#9a39ff);color:#fff;text-decoration:none;font-size:1.02rem;font-weight:700;box-shadow:0 8px 18px rgba(122,0,223,.25);">Go to News →</a>
+  </div>
+
+  <div style="flex:1;min-width:280px;">
+    <div style="border:1px solid #eee;border-radius:18px;padding:18px;background:#fafafa;">
+      <p style="margin:0 0 10px;color:#777;font-size:1rem;">Suggested highlight</p>
+      <h3 style="margin:0 0 8px;font-size:1.3rem;">Today’s top categories</h3>
+      <p style="margin:0;color:#555;line-height:1.75;font-size:1.02rem;">
+        Pick 4–6 categories to feature on the News page (Tech, Finance, Sports…) so readers find content instantly.
       </p>
     </div>
   </div>
