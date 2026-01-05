@@ -2,48 +2,49 @@
 
 <style>
   .tz-home {
-    font-family: "Inter", system-ui, -apple-system, sans-serif;
+    font-family: var(--wpi--font-general, "Roboto", sans-serif) !important;
+    font-size: var(--wpi--font-size-general, 1.6rem) !important;
+    font-weight: var(--wpi--font-general-weight, 400) !important;
     color: #111;
-    font-size: 19px;
   }
 
-  @media (max-width: 768px) {
-    .tz-home {
-      font-size: 18px;
-    }
-  }
-
+  /* Headings should use theme heading font */
   .tz-home h1 {
-    font-size: 3.1rem !important;
+    font-family: var(--wpi--font-heading, "Roboto", sans-serif) !important;
+    font-weight: var(--wpi--font-heading-weight, 400) !important;
+    letter-spacing: -0.01em;
+    font-size: var(--wpi--font-size-large, 3.4rem) !important;
   }
 
   .tz-home h2 {
-    font-size: 2.45rem !important;
+    font-family: var(--wpi--font-heading, "Roboto", sans-serif) !important;
+    font-weight: var(--wpi--font-heading-weight, 400) !important;
+    letter-spacing: -0.01em;
+    font-size: var(--wpi--font-size-medium, 2.4rem) !important;
   }
 
   .tz-home h3 {
-    font-size: 1.55rem !important;
+    font-family: var(--wpi--font-heading, "Roboto", sans-serif) !important;
+    font-weight: var(--wpi--font-heading-weight, 400) !important;
+    letter-spacing: -0.01em;
+    font-size: var(--wpi--font-size-small, 2rem) !important;
   }
 
   .tz-home p {
-    font-size: 1.2rem !important;
     line-height: 2 !important;
   }
 
-  .tz-home a {
-    font-size: 1.12rem !important;
+  .tz-home p,
+  .tz-home li {
+    font-size: var(--wpi--font-size-general, 1.6rem) !important;
+    font-weight: var(--wpi--font-general-weight, 400) !important;
   }
 
   .tz-home .tz-hero-inner {
     width: 100%;
   }
 
-  .tz-chip {
-    font-size: 1.18rem !important;
-  }
-
   .tz-meta {
-    font-size: 1.12rem !important;
     color: #666 !important;
   }
 
@@ -97,14 +98,12 @@
 
   .tz-home .tz-app-title{
     margin:0 0 6px;
-    font-size:18px;
-    font-weight:800;
+    font-weight:700;
     color:#2a166a;
   }
 
   .tz-home .tz-app-desc{
     margin:0 0 12px;
-    font-size:13.5px;
     color:#3c3c3c;
     line-height:1.35;
   }
@@ -195,7 +194,6 @@
     background: #f5f5f7;
     border: 1px solid #ececf2;
     color: #555;
-    font-size: 0.82rem;
     font-weight: 800;
     line-height: 1;
   }
@@ -208,7 +206,6 @@
     gap: 8px;
     padding: 11px 14px;
     border-radius: 12px;
-    font-weight: 800;
     text-decoration: none !important;
     line-height: 1.1 !important;
     border: 1px solid transparent;
@@ -238,7 +235,6 @@
   }
 
   .tz-home .tz-highlight .tz-highlight-label {
-    font-size: 0.82rem;
     font-weight: 900;
     color: #777;
     margin-bottom: 6px;
@@ -254,6 +250,30 @@
     color: #666;
     margin: 0;
   }
+
+  /* Small UI text should follow theme x-small */
+  .tz-home .tz-chip,
+  .tz-home .tz-badge,
+  .tz-home .tz-highlight-label {
+    font-size: var(--wpi--font-size-x-small, 1.4rem) !important;
+  }
+
+  .tz-home .tz-btn {
+    font-family: var(--wpi--font-general, "Roboto", sans-serif) !important;
+    font-size: var(--wpi--font-size-general, 1.6rem) !important;
+    font-weight: 700 !important;
+  }
+
+  .tz-home .tz-app-title {
+    font-family: var(--wpi--font-heading, "Roboto", sans-serif) !important;
+    font-size: var(--wpi--font-size-small, 2rem) !important;
+    font-weight: 700 !important;
+  }
+
+  .tz-home .tz-app-desc {
+    font-size: var(--wpi--font-size-x-small, 1.4rem) !important;
+    font-weight: var(--wpi--font-general-weight, 400) !important;
+  }
 </style>
 
 <div class="tz-home">
@@ -263,11 +283,11 @@
   <section class="tz-hero" style="padding:34px 0 18px;">
     <div class="tz-hero-inner" style="max-width:1800px;margin:0 auto;padding:0 18px;">
       <div style="border:1px solid #eee;border-radius:18px;background:linear-gradient(180deg,#ffffff 0%, #fafafa 100%);padding:24px 18px;">
-        <p style="letter-spacing:.10em;text-transform:uppercase;font-size:1.05rem;color:#777;margin:0 0 10px;">Welcome</p>
-        <h1 style="font-size:3rem;line-height:1.12;margin:0 0 12px;">Everything Tamil — Names, News & Language Tools</h1>
+        <p style="letter-spacing:.10em;text-transform:uppercase;color:#777;margin:0 0 10px;">Welcome</p>
+        <h1 style="line-height:1.12;margin:0 0 12px;">Everything Tamil — Names, News & Language Tools</h1>
 
     <!-- Short intro requested -->
-    <p style="font-size:1.2rem;line-height:1.85;color:#555;margin:0 0 18px;max-width:860px;">
+    <p style="line-height:1.85;color:#555;margin:0 0 18px;max-width:860px;">
       Discover meaningful Tamil baby names, read clean Tamil news, and use fast language tools like Bamini ↔ Unicode conversion — all in one place.
     </p>
 
@@ -350,9 +370,9 @@
             👶 <strong>Baby Name Finder</strong>
           </div>
 
-          <h2 style="margin:12px 0 12px;font-size:2.05rem;">Find meaningful Tamil baby names</h2>
+          <h2 style="margin:12px 0 12px;">Find meaningful Tamil baby names</h2>
 
-          <p style="margin:0 0 16px;color:#555;line-height:1.8;font-size:1.08rem;">
+          <p style="margin:0 0 16px;color:#555;line-height:1.8;">
             Search names by meaning, origin, gender, and style — with a premium browsing experience.
           </p>
 
@@ -362,7 +382,7 @@
             <span class="tz-chip" style="padding:7px 11px;border-radius:999px;border:1px solid #eee;background:#fafafa;color:#555;">📖 Meaning-first</span>
           </div>
 
-          <ul style="margin:0 0 18px;color:#555;line-height:1.8;padding-left:18px;font-size:1.02rem;">
+          <ul style="margin:0 0 18px;color:#555;line-height:1.8;padding-left:18px;">
             <li>Smart filters for fast discovery</li>
             <li>Meaning-first browsing</li>
             <li>Favorites and sharing-ready results</li>
@@ -397,9 +417,9 @@
             📰 <strong>News</strong>
           </div>
 
-          <h2 style="margin:12px 0 12px;font-size:2.05rem;">Tamil news — clean, readable, and fast</h2>
+          <h2 style="margin:12px 0 12px;">Tamil news — clean, readable, and fast</h2>
 
-          <p style="margin:0 0 16px;color:#555;line-height:1.8;font-size:1.08rem;">
+          <p style="margin:0 0 16px;color:#555;line-height:1.8;">
             A curated news feed in Tamil, with a smooth reading experience and optional translations. Built for quick scanning and deep reading.
           </p>
 
@@ -409,7 +429,7 @@
             <span class="tz-chip" style="padding:7px 11px;border-radius:999px;border:1px solid #eee;background:#fafafa;color:#555;">🔁 Fresh updates</span>
           </div>
 
-          <ul style="margin:0 0 18px;color:#555;line-height:1.8;padding-left:18px;font-size:1.02rem;">
+          <ul style="margin:0 0 18px;color:#555;line-height:1.8;padding-left:18px;">
             <li>Readable layout (mobile-first)</li>
             <li>English + Tanglish + Tamil on article pages</li>
             <li>Featured images automatically added</li>
@@ -444,9 +464,9 @@
             🔤 <strong>Bamini Converter</strong>
           </div>
 
-          <h2 style="margin:12px 0 12px;font-size:2.05rem;">Convert Bamini ↔ Unicode instantly</h2>
+          <h2 style="margin:12px 0 12px;">Convert Bamini ↔ Unicode instantly</h2>
 
-          <p style="margin:0 0 16px;color:#555;line-height:1.8;font-size:1.08rem;">
+          <p style="margin:0 0 16px;color:#555;line-height:1.8;">
             Paste your text and convert in seconds — reliable output, copy-ready formatting, and fast performance.
           </p>
 
@@ -456,7 +476,7 @@
             <span class="tz-chip" style="padding:7px 11px;border-radius:999px;border:1px solid #eee;background:#fafafa;color:#555;">🔁 Two-way</span>
           </div>
 
-          <ul style="margin:0 0 18px;color:#555;line-height:1.8;padding-left:18px;font-size:1.02rem;">
+          <ul style="margin:0 0 18px;color:#555;line-height:1.8;padding-left:18px;">
             <li>Two-way conversion</li>
             <li>Copy & download-friendly output</li>
             <li>Built for real-world documents</li>
@@ -491,9 +511,9 @@
             🧰 <strong>More Tools</strong>
           </div>
 
-          <h2 style="margin:12px 0 12px;font-size:2.05rem;">A growing Tamil toolkit</h2>
+          <h2 style="margin:12px 0 12px;">A growing Tamil toolkit</h2>
 
-          <p style="margin:0 0 16px;color:#555;line-height:1.8;font-size:1.08rem;">
+          <p style="margin:0 0 16px;color:#555;line-height:1.8;">
             From typing helpers to language utilities — Tamil.Zone is built to keep expanding.
           </p>
 
@@ -503,7 +523,7 @@
             <span class="tz-chip" style="padding:7px 11px;border-radius:999px;border:1px solid #eee;background:#fafafa;color:#555;">🧠 Smart features</span>
           </div>
 
-          <ul style="margin:0 0 18px;color:#555;line-height:1.8;padding-left:18px;font-size:1.02rem;">
+          <ul style="margin:0 0 18px;color:#555;line-height:1.8;padding-left:18px;">
             <li>Typing helpers</li>
             <li>Converters & utilities</li>
             <li>New tools added regularly</li>
@@ -532,7 +552,7 @@
     <div style="max-width:1800px;margin:0 auto;padding:0 18px;">
       <div style="border:1px solid #eee;border-radius:18px;background:#111;color:#fff;padding:18px;display:flex;flex-wrap:wrap;gap:12px;align-items:center;justify-content:space-between;">
         <div>
-          <div style="font-size:1.1rem;font-weight:800;margin:0 0 4px;">Start exploring Tamil.Zone</div>
+          <div style="font-weight:800;margin:0 0 4px;">Start exploring Tamil.Zone</div>
           <div style="color:#cfcfcf;line-height:1.6;">Pick a tool and jump in — Baby Names, News, Bamini, and more.</div>
         </div>
         <div style="display:flex;flex-wrap:wrap;gap:10px;">
