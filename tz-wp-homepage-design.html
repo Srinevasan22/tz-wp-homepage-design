@@ -150,6 +150,99 @@
       grid-column: 1;
     }
   }
+
+  /* --- Fix: main column content should align left inside its grid cell --- */
+  .tz-home .tz-section .tz-main {
+    text-align: left !important;
+    justify-self: stretch;
+    align-self: start;
+  }
+
+  /* Remove accidental centering inside main blocks (common culprit) */
+  .tz-home .tz-section .tz-main > * {
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+  }
+
+  /* If any main wrapper was set to auto-center, neutralize it */
+  .tz-home .tz-section .tz-main .tz-center,
+  .tz-home .tz-section .tz-main .center,
+  .tz-home .tz-section .tz-main [style*="margin: 0 auto"],
+  .tz-home .tz-section .tz-main [style*="text-align:center"] {
+    text-align: left !important;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+  }
+
+  /* --- Consistent section badge --- */
+  .tz-home .tz-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 5px 10px;
+    border-radius: 999px;
+    background: #f5f5f7;
+    border: 1px solid #ececf2;
+    color: #555;
+    font-size: 0.82rem;
+    font-weight: 800;
+    line-height: 1;
+  }
+
+  /* --- Unified buttons --- */
+  .tz-home .tz-btn {
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    gap: 8px;
+    padding: 11px 14px;
+    border-radius: 12px;
+    font-weight: 800;
+    text-decoration: none !important;
+    line-height: 1.1 !important;
+    border: 1px solid transparent;
+    transition: transform .12s ease;
+  }
+  .tz-home .tz-btn:hover { transform: translateY(-1px); }
+
+  .tz-home .tz-btn--primary {
+    background: linear-gradient(135deg,#7a00df,#9a39ff);
+    color: #fff !important;
+    box-shadow: 0 10px 22px rgba(122,0,223,.22);
+  }
+
+  .tz-home .tz-btn--secondary {
+    background: #f7f1ff;
+    border-color: #dec7ff;
+    color: #5a1796 !important;
+    box-shadow: none;
+  }
+
+  /* --- Consistent highlight cards --- */
+  .tz-home .tz-highlight {
+    background: #fff;
+    border: 1px solid #eee;
+    border-radius: 14px;
+    padding: 14px 16px;
+  }
+
+  .tz-home .tz-highlight .tz-highlight-label {
+    font-size: 0.82rem;
+    font-weight: 900;
+    color: #777;
+    margin-bottom: 6px;
+  }
+
+  .tz-home .tz-highlight .tz-highlight-title {
+    font-size: 1.02rem;
+    font-weight: 900;
+    margin: 0 0 6px;
+  }
+
+  .tz-home .tz-highlight .tz-highlight-desc {
+    color: #666;
+    margin: 0;
+  }
 </style>
 
 <div class="tz-home">
@@ -176,13 +269,11 @@
     </div>
 
     <div class="tz-home-cta" style="display:flex;flex-wrap:wrap;gap:10px;margin-top:14px;">
-      <a href="https://tamil.zone/tamil-name-finder/"
-         style="display:inline-block;padding:12px 16px;border-radius:12px;background:linear-gradient(135deg,#7a00df,#9a39ff);color:#fff;text-decoration:none;font-weight:800;box-shadow:0 8px 18px rgba(122,0,223,.25);">
+      <a class="tz-btn tz-btn--primary" href="https://tamil.zone/tamil-name-finder/">
         Explore Baby Names →
       </a>
 
-      <a href="https://tamil.zone/tamil-bamini/"
-         style="display:inline-block;padding:12px 16px;border-radius:12px;border:1px solid #dec7ff;background:#f7f1ff;color:#5a1796;text-decoration:none;font-weight:800;">
+      <a class="tz-btn tz-btn--secondary" href="https://tamil.zone/tamil-bamini/">
         Open Converter →
       </a>
     </div>
@@ -244,7 +335,7 @@
     <div style="max-width:1800px;margin:0 auto;padding:0 18px;">
       <div class="tz-section is-reverse">
         <div class="tz-main">
-          <div style="display:inline-flex;gap:8px;align-items:center;padding:8px 13px;border:1px solid #eee;border-radius:999px;color:#444;font-size:1.02rem;background:#fff;">
+          <div class="tz-badge">
             👶 <strong>Baby Name Finder</strong>
           </div>
 
@@ -266,14 +357,14 @@
             <li>Favorites and sharing-ready results</li>
           </ul>
 
-          <a href="https://tamil.zone/tamil-name-finder/" style="display:inline-block;padding:12px 16px;border-radius:12px;border:1px solid #dec7ff;background:#f7f1ff;color:#5a1796;text-decoration:none;font-size:1.02rem;font-weight:700;">Find a Name →</a>
+          <a class="tz-btn tz-btn--primary" href="https://tamil.zone/tamil-name-finder/">Find a Name →</a>
         </div>
 
         <div class="tz-aside">
-          <div style="border:1px solid #eee;border-radius:18px;padding:18px;background:#fff;">
-            <p style="margin:0 0 10px;color:#777;font-size:1rem;">Suggested highlight</p>
-            <h3 style="margin:0 0 8px;font-size:1.3rem;">Name of the day</h3>
-            <p style="margin:0;color:#555;line-height:1.75;font-size:1.02rem;">
+          <div class="tz-highlight">
+            <div class="tz-highlight-label">Suggested highlight</div>
+            <div class="tz-highlight-title">Name of the day</div>
+            <p class="tz-highlight-desc">
               Featuring one name daily is great for SEO and encourages returning visitors.
             </p>
           </div>
@@ -291,8 +382,8 @@
     <div style="max-width:1800px;margin:0 auto;padding:0 18px;">
       <div class="tz-section">
         <div class="tz-main">
-          <div style="display:inline-flex;gap:8px;align-items:center;padding:8px 13px;border:1px solid #eee;border-radius:999px;color:#444;font-size:1.02rem;background:#fff;">
-            📰 <strong>News</strong> <span style="color:#888;">/news</span>
+          <div class="tz-badge">
+            📰 <strong>News</strong>
           </div>
 
           <h2 style="margin:12px 0 12px;font-size:2.05rem;">Tamil news — clean, readable, and fast</h2>
@@ -313,14 +404,14 @@
             <li>Featured images automatically added</li>
           </ul>
 
-          <a href="https://tamil.zone/news/" style="display:inline-block;padding:12px 16px;border-radius:12px;background:linear-gradient(135deg,#7a00df,#9a39ff);color:#fff;text-decoration:none;font-size:1.02rem;font-weight:700;box-shadow:0 8px 18px rgba(122,0,223,.25);">Go to News →</a>
+          <a class="tz-btn tz-btn--primary" href="https://tamil.zone/news/">Go to News →</a>
         </div>
 
         <div class="tz-aside">
-          <div style="border:1px solid #eee;border-radius:18px;padding:18px;background:#fafafa;">
-            <p style="margin:0 0 10px;color:#777;font-size:1rem;">Suggested highlight</p>
-            <h3 style="margin:0 0 8px;font-size:1.3rem;">Today’s top categories</h3>
-            <p style="margin:0;color:#555;line-height:1.75;font-size:1.02rem;">
+          <div class="tz-highlight">
+            <div class="tz-highlight-label">Suggested highlight</div>
+            <div class="tz-highlight-title">Today’s top categories</div>
+            <p class="tz-highlight-desc">
               Pick 4–6 categories to feature on the News page (Tech, Finance, Sports…) so readers find content instantly.
             </p>
           </div>
@@ -338,7 +429,7 @@
     <div style="max-width:1800px;margin:0 auto;padding:0 18px;">
       <div class="tz-section is-reverse">
         <div class="tz-main">
-          <div style="display:inline-flex;gap:8px;align-items:center;padding:8px 13px;border:1px solid #eee;border-radius:999px;color:#444;font-size:1.02rem;background:#fff;">
+          <div class="tz-badge">
             🔤 <strong>Bamini Converter</strong>
           </div>
 
@@ -360,14 +451,14 @@
             <li>Built for real-world documents</li>
           </ul>
 
-          <a href="https://tamil.zone/tamil-bamini/" style="display:inline-block;padding:12px 16px;border-radius:12px;border:1px solid #dec7ff;background:#f7f1ff;color:#5a1796;text-decoration:none;font-size:1.02rem;font-weight:700;">Open Converter →</a>
+          <a class="tz-btn tz-btn--primary" href="https://tamil.zone/tamil-bamini/">Open Converter →</a>
         </div>
 
         <div class="tz-aside">
-          <div style="border:1px solid #eee;border-radius:18px;padding:18px;background:#fafafa;">
-            <p style="margin:0 0 10px;color:#777;font-size:1rem;">Suggested highlight</p>
-            <h3 style="margin:0 0 8px;font-size:1.3rem;">Paste • Convert • Done</h3>
-            <p style="margin:0;color:#555;line-height:1.75;font-size:1.02rem;">
+          <div class="tz-highlight">
+            <div class="tz-highlight-label">Suggested highlight</div>
+            <div class="tz-highlight-title">Paste • Convert • Done</div>
+            <p class="tz-highlight-desc">
               Later you can add a small screenshot or mini demo preview for even more trust.
             </p>
           </div>
@@ -385,7 +476,7 @@
     <div style="max-width:1800px;margin:0 auto;padding:0 18px;">
       <div class="tz-section">
         <div class="tz-main">
-          <div style="display:inline-flex;gap:8px;align-items:center;padding:8px 13px;border:1px solid #eee;border-radius:999px;color:#444;font-size:1.02rem;background:#fff;">
+          <div class="tz-badge">
             🧰 <strong>More Tools</strong>
           </div>
 
@@ -407,14 +498,14 @@
             <li>New tools added regularly</li>
           </ul>
 
-          <a href="https://tamil.zone/tamil-typing/" style="display:inline-block;padding:12px 16px;border-radius:12px;background:linear-gradient(135deg,#7a00df,#9a39ff);color:#fff;text-decoration:none;font-size:1.02rem;font-weight:700;box-shadow:0 8px 18px rgba(122,0,223,.25);">Browse Tools →</a>
+          <a class="tz-btn tz-btn--primary" href="https://tamil.zone/tamil-typing/">Browse Tools →</a>
         </div>
 
         <div class="tz-aside">
-          <div style="border:1px solid #eee;border-radius:18px;padding:18px;background:#fff;">
-            <p style="margin:0 0 10px;color:#777;font-size:1rem;">Suggested highlight</p>
-            <h3 style="margin:0 0 8px;font-size:1.3rem;">What’s next?</h3>
-            <p style="margin:0;color:#555;line-height:1.75;font-size:1.02rem;">
+          <div class="tz-highlight">
+            <div class="tz-highlight-label">Suggested highlight</div>
+            <div class="tz-highlight-title">What’s next?</div>
+            <p class="tz-highlight-desc">
               You can use this space for “Coming soon” tools or a simple newsletter signup prompt.
             </p>
           </div>
