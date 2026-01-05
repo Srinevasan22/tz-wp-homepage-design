@@ -54,6 +54,7 @@
     grid-template-columns: repeat(4, minmax(0, 1fr));
     gap:16px;
     margin-top:18px;
+    align-items: stretch !important;
   }
 
   .tz-home .tz-app-card{
@@ -68,6 +69,7 @@
     display:flex;
     flex-direction:column;
     min-height: 170px;
+    height: 100%;
     cursor: pointer;
   }
 
@@ -84,9 +86,10 @@
     text-decoration: none !important;
   }
 
-  .tz-home .tz-app-card__top{
+  .tz-home .tz-app-header{
     display:flex;
     align-items:center;
+    gap: 8px;
     justify-content:flex-start;
     margin-bottom:10px;
   }
@@ -100,10 +103,12 @@
     margin:0 0 6px;
     font-weight:700;
     color:#2a166a;
+    line-height: 1.2 !important;
+    margin-top: 0 !important;
   }
 
   .tz-home .tz-app-desc{
-    margin:0 0 12px;
+    margin:6px 0 12px;
     color:#3c3c3c;
     line-height:1.35;
   }
@@ -161,10 +166,20 @@
     text-align: left !important;
     justify-self: stretch;
     align-self: start;
+    width: 100%;
   }
 
   .tz-home .tz-section .tz-main,
   .tz-home .tz-section .tz-main * {
+    text-align: left !important;
+  }
+
+  .tz-home .tz-section .tz-main h2,
+  .tz-home .tz-section .tz-main p,
+  .tz-home .tz-section .tz-main ul,
+  .tz-home .tz-section .tz-main .tz-badge,
+  .tz-home .tz-section .tz-main .tz-chip-row,
+  .tz-home .tz-section .tz-main .tz-btn {
     text-align: left !important;
   }
 
@@ -182,6 +197,11 @@
     text-align: left !important;
     margin-left: 0 !important;
     margin-right: 0 !important;
+  }
+
+  .tz-home .tz-section .tz-aside {
+    align-self: start !important;
+    justify-self: stretch;
   }
 
   /* --- Consistent section badge --- */
@@ -323,34 +343,34 @@
     <!-- BIG APP CARDS (inside the hero card) -->
     <div class="tz-app-grid">
       <a class="tz-app-card" href="https://tamil.zone/tamil-name-finder/">
-        <div class="tz-app-card__top">
+        <div class="tz-app-header">
           <span class="tz-app-icon">👶</span>
+          <h3 class="tz-app-title">Search Baby Names →</h3>
         </div>
-        <h3 class="tz-app-title">Search Baby Names →</h3>
         <p class="tz-app-desc">Search by meaning, style, and origin with fast discovery filters.</p>
       </a>
 
       <a class="tz-app-card" href="https://tamil.zone/news/">
-        <div class="tz-app-card__top">
+        <div class="tz-app-header">
           <span class="tz-app-icon">📰</span>
+          <h3 class="tz-app-title">Read Tamil News →</h3>
         </div>
-        <h3 class="tz-app-title">Read Tamil News →</h3>
         <p class="tz-app-desc">Clean reading with English + Tanglish + Tamil modes, plus featured images.</p>
       </a>
 
       <a class="tz-app-card" href="https://tamil.zone/tamil-bamini/">
-        <div class="tz-app-card__top">
+        <div class="tz-app-header">
           <span class="tz-app-icon">🔤</span>
+          <h3 class="tz-app-title">Convert Bamini → Unicode →</h3>
         </div>
-        <h3 class="tz-app-title">Convert Bamini → Unicode →</h3>
         <p class="tz-app-desc">Paste text and convert instantly with copy-ready clean output.</p>
       </a>
 
       <a class="tz-app-card" href="https://tamil.zone/tamil-typing/">
-        <div class="tz-app-card__top">
+        <div class="tz-app-header">
           <span class="tz-app-icon">⌨️</span>
+          <h3 class="tz-app-title">Use Tamil Typing Tools →</h3>
         </div>
-        <h3 class="tz-app-title">Use Tamil Typing Tools →</h3>
         <p class="tz-app-desc">Type, format, and work faster with the growing Tamil toolkit.</p>
       </a>
     </div>
