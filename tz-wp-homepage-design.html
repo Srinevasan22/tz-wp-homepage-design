@@ -125,6 +125,7 @@
     grid-template-columns: 1.15fr 0.85fr;
     gap: 22px;
     align-items: start;
+    max-width: 1240px;
   }
 
   .tz-home .tz-section .tz-main { grid-column: 1; }
@@ -132,6 +133,8 @@
 
   .tz-home .tz-section.is-reverse {
     grid-template-columns: 0.85fr 1.15fr;
+    margin-left: auto;
+    margin-right: 0;
   }
 
   .tz-home .tz-section.is-reverse .tz-aside { grid-column: 1; }
@@ -141,6 +144,9 @@
     .tz-home .tz-section,
     .tz-home .tz-section.is-reverse {
       grid-template-columns: 1fr;
+      max-width: none;
+      margin-left: 0;
+      margin-right: 0;
     }
 
     .tz-home .tz-section .tz-main,
@@ -156,6 +162,11 @@
     text-align: left !important;
     justify-self: stretch;
     align-self: start;
+  }
+
+  .tz-home .tz-section .tz-main,
+  .tz-home .tz-section .tz-main * {
+    text-align: left !important;
   }
 
   /* Remove accidental centering inside main blocks (common culprit) */
@@ -291,15 +302,7 @@
 
     <!-- BIG APP CARDS (inside the hero card) -->
     <div class="tz-app-grid">
-      <a class="tz-app-card" href="/news">
-        <div class="tz-app-card__top">
-          <span class="tz-app-icon">📰</span>
-        </div>
-        <h3 class="tz-app-title">Read Tamil News →</h3>
-        <p class="tz-app-desc">Clean reading with English + Tanglish + Tamil modes, plus featured images.</p>
-      </a>
-
-      <a class="tz-app-card" href="/baby-name-finder">
+      <a class="tz-app-card" href="https://tamil.zone/tamil-name-finder/">
         <div class="tz-app-card__top">
           <span class="tz-app-icon">👶</span>
         </div>
@@ -307,7 +310,15 @@
         <p class="tz-app-desc">Search by meaning, style, and origin with fast discovery filters.</p>
       </a>
 
-      <a class="tz-app-card" href="/bamini">
+      <a class="tz-app-card" href="https://tamil.zone/news/">
+        <div class="tz-app-card__top">
+          <span class="tz-app-icon">📰</span>
+        </div>
+        <h3 class="tz-app-title">Read Tamil News →</h3>
+        <p class="tz-app-desc">Clean reading with English + Tanglish + Tamil modes, plus featured images.</p>
+      </a>
+
+      <a class="tz-app-card" href="https://tamil.zone/tamil-bamini/">
         <div class="tz-app-card__top">
           <span class="tz-app-icon">🔤</span>
         </div>
@@ -315,7 +326,7 @@
         <p class="tz-app-desc">Paste text and convert instantly with copy-ready clean output.</p>
       </a>
 
-      <a class="tz-app-card" href="/typing">
+      <a class="tz-app-card" href="https://tamil.zone/tamil-typing/">
         <div class="tz-app-card__top">
           <span class="tz-app-icon">⌨️</span>
         </div>
@@ -522,11 +533,11 @@
       <div style="border:1px solid #eee;border-radius:18px;background:#111;color:#fff;padding:18px;display:flex;flex-wrap:wrap;gap:12px;align-items:center;justify-content:space-between;">
         <div>
           <div style="font-size:1.1rem;font-weight:800;margin:0 0 4px;">Start exploring Tamil.Zone</div>
-          <div style="color:#cfcfcf;line-height:1.6;">Pick a tool and jump in — News, Baby Names, Bamini, and more.</div>
+          <div style="color:#cfcfcf;line-height:1.6;">Pick a tool and jump in — Baby Names, News, Bamini, and more.</div>
         </div>
         <div style="display:flex;flex-wrap:wrap;gap:10px;">
-          <a href="https://tamil.zone/news/" style="display:inline-block;padding:10px 14px;border-radius:12px;background:linear-gradient(135deg,#7a00df,#9a39ff);color:#fff;text-decoration:none;font-weight:800;box-shadow:0 6px 14px rgba(122,0,223,.25);">News</a>
-          <a href="https://tamil.zone/tamil-name-finder/" style="display:inline-block;padding:10px 14px;border-radius:12px;border:1px solid rgba(255,255,255,.35);background:rgba(255,255,255,.08);color:#fff;text-decoration:none;font-weight:700;">Baby Names</a>
+          <a href="https://tamil.zone/tamil-name-finder/" style="display:inline-block;padding:10px 14px;border-radius:12px;background:linear-gradient(135deg,#7a00df,#9a39ff);color:#fff;text-decoration:none;font-weight:800;box-shadow:0 6px 14px rgba(122,0,223,.25);">Baby Names</a>
+          <a href="https://tamil.zone/news/" style="display:inline-block;padding:10px 14px;border-radius:12px;border:1px solid rgba(255,255,255,.35);background:rgba(255,255,255,.08);color:#fff;text-decoration:none;font-weight:700;">News</a>
           <a href="https://tamil.zone/tamil-bamini/" style="display:inline-block;padding:10px 14px;border-radius:12px;border:1px solid rgba(255,255,255,.35);background:rgba(255,255,255,.08);color:#fff;text-decoration:none;font-weight:700;">Bamini</a>
         </div>
       </div>
