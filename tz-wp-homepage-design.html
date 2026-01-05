@@ -122,48 +122,23 @@
   }
 
   /* =========================
-     Section 2-col layout system (FIXED ALIGNMENT)
-     Uses grid areas to prevent drift / row drop issues
+     Consistent section layout (no alternation)
      ========================= */
-
   .tz-home .tz-section {
     display: grid;
-    grid-template-columns: 1.15fr 0.85fr;
+    grid-template-columns: 1.15fr 0.85fr;  /* main | highlight */
     grid-template-areas: "main aside";
     gap: 22px;
     align-items: start;
-
-    /* IMPORTANT: align all sections the same way */
     width: 100%;
-    max-width: 100%;
-    margin: 0;
   }
 
-  .tz-home .tz-section .tz-main {
-    grid-area: main;
-    justify-self: stretch;
-    align-self: start;
-    width: 100%;
-    text-align: left !important;
-  }
+  .tz-home .tz-section .tz-main { grid-area: main; text-align: left; }
+  .tz-home .tz-section .tz-aside { grid-area: aside; align-self: start; }
 
-  .tz-home .tz-section .tz-aside {
-    grid-area: aside;
-    justify-self: stretch;
-    align-self: start !important;
-  }
-
-  /* Reverse sections swap areas ONLY (no horizontal shifting) */
-  .tz-home .tz-section.is-reverse {
-    grid-template-columns: 0.85fr 1.15fr;
-    grid-template-areas: "aside main";
-    margin: 0;          /* REMOVE the previous margin-left:auto trick */
-  }
-
-  /* Mobile: stack in a consistent order */
+  /* Mobile stack */
   @media (max-width: 860px) {
-    .tz-home .tz-section,
-    .tz-home .tz-section.is-reverse {
+    .tz-home .tz-section {
       grid-template-columns: 1fr;
       grid-template-areas:
         "main"
@@ -172,40 +147,78 @@
     }
   }
 
-  /* --- Fix: main column content should align left inside its grid cell --- */
-  .tz-home .tz-section .tz-main {
-    text-align: left !important;
-    justify-self: stretch;
-    align-self: start;
-    width: 100%;
+  /* =========================
+     Bento grid (top tool showcase)
+     ========================= */
+  .tz-home .tz-bento {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    gap: 14px;
+    margin-top: 12px;
   }
 
-  .tz-home .tz-section .tz-main h2,
-  .tz-home .tz-section .tz-main p,
-  .tz-home .tz-section .tz-main ul,
-  .tz-home .tz-section .tz-main li {
-    text-align: left !important;
+  .tz-home .tz-bento a {
+    text-decoration: none !important;
   }
 
-  /* Remove accidental centering inside main blocks (common culprit) */
-  .tz-home .tz-section .tz-main > * {
-    margin-left: 0 !important;
-    margin-right: 0 !important;
+  .tz-home .tz-bento-card {
+    height: 100%;
+    border-radius: 14px;
+    border: 1px solid #eadcff;
+    background: #f6f1ff;
+    padding: 14px 14px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    cursor: pointer;
   }
 
-  /* If any main wrapper was set to auto-center, neutralize it */
-  .tz-home .tz-section .tz-main .tz-center,
-  .tz-home .tz-section .tz-main .center,
-  .tz-home .tz-section .tz-main [style*="margin: 0 auto"],
-  .tz-home .tz-section .tz-main [style*="text-align:center"] {
-    text-align: left !important;
-    margin-left: 0 !important;
-    margin-right: 0 !important;
+  .tz-home .tz-bento-card:hover { transform: translateY(-1px); }
+
+  .tz-home .tz-bento-head {
+    display: flex;
+    align-items: center;
+    gap: 10px;
   }
 
-  .tz-home .tz-section .tz-aside {
-    align-self: start !important;
-    justify-self: stretch;
+  .tz-home .tz-bento-icon {
+    width: 30px;
+    height: 30px;
+    border-radius: 10px;
+    background: #fff;
+    border: 1px solid #eadcff;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 900;
+    color: #5a1796;
+  }
+
+  .tz-home .tz-bento-title {
+    font-weight: 900;
+    margin: 0;
+  }
+
+  .tz-home .tz-bento-desc {
+    margin: 0;
+    color: #555;
+  }
+
+  .tz-home .tz-bento-cta {
+    margin-top: auto;
+    font-weight: 900;
+    color: #5a1796;
+  }
+
+  /* Size variants */
+  .tz-home .tz-bento-primary { grid-column: span 6; }
+  .tz-home .tz-bento-secondary { grid-column: span 3; }
+
+  /* Mobile: stack cleanly */
+  @media (max-width: 860px) {
+    .tz-home .tz-bento { grid-template-columns: 1fr; }
+    .tz-home .tz-bento-primary,
+    .tz-home .tz-bento-secondary { grid-column: auto; }
   }
 
   /* --- Consistent section badge --- */
@@ -344,38 +357,50 @@
       </div>
     </div>
 
-    <!-- BIG APP CARDS (inside the hero card) -->
-    <div class="tz-app-grid">
-      <a class="tz-app-card" href="https://tamil.zone/tamil-name-finder/">
-        <div class="tz-app-header">
-          <span class="tz-app-icon">👶</span>
-          <h3 class="tz-app-title">Search Baby Names →</h3>
+    <div class="tz-bento">
+      <!-- Primary (bigger) -->
+      <a class="tz-bento-primary" href="https://tamil.zone/tamil-name-finder/">
+        <div class="tz-bento-card">
+          <div class="tz-bento-head">
+            <span class="tz-bento-icon">👶</span>
+            <h3 class="tz-bento-title">Search Baby Names</h3>
+          </div>
+          <p class="tz-bento-desc">Filter by meaning, origin, style, and more — with a clean browsing experience.</p>
+          <div class="tz-bento-cta">Explore Baby Names →</div>
         </div>
-        <p class="tz-app-desc">Search by meaning, style, and origin with fast discovery filters.</p>
       </a>
 
-      <a class="tz-app-card" href="https://tamil.zone/news/">
-        <div class="tz-app-header">
-          <span class="tz-app-icon">📰</span>
-          <h3 class="tz-app-title">Read Tamil News →</h3>
+      <a class="tz-bento-secondary" href="https://tamil.zone/news/">
+        <div class="tz-bento-card">
+          <div class="tz-bento-head">
+            <span class="tz-bento-icon">📰</span>
+            <h3 class="tz-bento-title">Read Tamil News</h3>
+          </div>
+          <p class="tz-bento-desc">Readable, fast, and curated — with clean category browsing.</p>
+          <div class="tz-bento-cta">Go to News →</div>
         </div>
-        <p class="tz-app-desc">Clean reading with English + Tanglish + Tamil modes, plus featured images.</p>
       </a>
 
-      <a class="tz-app-card" href="https://tamil.zone/tamil-bamini/">
-        <div class="tz-app-header">
-          <span class="tz-app-icon">🔤</span>
-          <h3 class="tz-app-title">Convert Bamini → Unicode →</h3>
+      <a class="tz-bento-secondary" href="https://tamil.zone/tamil-bamini/">
+        <div class="tz-bento-card">
+          <div class="tz-bento-head">
+            <span class="tz-bento-icon">🔁</span>
+            <h3 class="tz-bento-title">Bamini ↔ Unicode</h3>
+          </div>
+          <p class="tz-bento-desc">Paste, convert, and copy instantly with reliable output.</p>
+          <div class="tz-bento-cta">Open Converter →</div>
         </div>
-        <p class="tz-app-desc">Paste text and convert instantly with copy-ready clean output.</p>
       </a>
 
-      <a class="tz-app-card" href="https://tamil.zone/tamil-typing/">
-        <div class="tz-app-header">
-          <span class="tz-app-icon">⌨️</span>
-          <h3 class="tz-app-title">Use Tamil Typing Tools →</h3>
+      <a class="tz-bento-secondary" href="https://tamil.zone/tamil-typing/">
+        <div class="tz-bento-card">
+          <div class="tz-bento-head">
+            <span class="tz-bento-icon">⌨️</span>
+            <h3 class="tz-bento-title">Tamil Typing Tools</h3>
+          </div>
+          <p class="tz-bento-desc">Type, format, and work faster with the growing toolkit.</p>
+          <div class="tz-bento-cta">Browse Tools →</div>
         </div>
-        <p class="tz-app-desc">Type, format, and work faster with the growing Tamil toolkit.</p>
       </a>
     </div>
   </div>
@@ -388,7 +413,7 @@
 
   <section class="tz-app tz-app-baby" style="padding:24px 0;">
     <div style="max-width:1800px;margin:0 auto;padding:0 18px;">
-      <div class="tz-section is-reverse">
+      <div class="tz-section">
         <div class="tz-main">
           <div class="tz-badge">
             👶 <strong>Baby Name Finder</strong>
@@ -482,7 +507,7 @@
 
   <section class="tz-app tz-app-bamini" style="padding:24px 0;">
     <div style="max-width:1800px;margin:0 auto;padding:0 18px;">
-      <div class="tz-section is-reverse">
+      <div class="tz-section">
         <div class="tz-main">
           <div class="tz-badge">
             🔤 <strong>Bamini Converter</strong>
