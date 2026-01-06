@@ -33,7 +33,13 @@ Notes:
     <div class="tz-feature-grid" role="region" aria-label="Featured tools">
       <!-- Big Baby Names card -->
       <article class="tz-card tz-card-feature tz-card-babies" aria-label="Search Tamil baby names">
-        <div class="tz-card-media tz-card-media-purple" aria-hidden="true"></div>
+        <div class="tz-card-media tz-card-media-hero">
+          <img
+            src="https://tamil.zone/wp-content/uploads/2026/01/ChatGPT-Image-Jan-6-2026-02_10_06-PM.png"
+            alt="Tamil baby name finder preview"
+            loading="lazy"
+            decoding="async">
+        </div>
 
         <div class="tz-card-body">
           <h2 class="tz-card-title">Search Baby Names</h2>
@@ -63,7 +69,13 @@ Notes:
 
       <!-- News card -->
       <article class="tz-card tz-card-feature tz-card-news" aria-label="Read Tamil news">
-        <div class="tz-card-media" data-bg="/wp-content/uploads/2026/01/tz-news-card.jpg" aria-hidden="true"></div>
+        <div class="tz-card-media tz-card-media-hero">
+          <img
+            src="https://tamil.zone/wp-content/uploads/2026/01/ChatGPT-Image-Jan-6-2026-02_09_55-PM.png"
+            alt="Tamil news preview"
+            loading="lazy"
+            decoding="async">
+        </div>
         <div class="tz-card-body">
           <h2 class="tz-card-title">Read Tamil News</h2>
           <p class="tz-card-sub">Readable, fast, and curated — with clean category browsing.</p>
@@ -73,7 +85,13 @@ Notes:
 
       <!-- Bamini converter card -->
       <article class="tz-card tz-card-feature tz-card-bamini" aria-label="Bamini to Unicode converter">
-        <div class="tz-card-media" data-bg="/wp-content/uploads/2026/01/tz-bamini-card.jpg" aria-hidden="true"></div>
+        <div class="tz-card-media tz-card-media-hero">
+          <img
+            src="https://tamil.zone/wp-content/uploads/2026/01/ChatGPT-Image-Jan-6-2026-02_09_46-PM.png"
+            alt="Bamini to Unicode converter preview"
+            loading="lazy"
+            decoding="async">
+        </div>
         <div class="tz-card-body">
           <h2 class="tz-card-title">Bamini → Unicode</h2>
           <p class="tz-card-sub">Convert text between Tamil Bamini and Unicode.</p>
@@ -447,10 +465,25 @@ Notes:
     text-align: left;
   }
 
-  .tz-card-feature { display: grid; grid-template-rows: 140px 1fr; min-height: 260px; }
+  .tz-card-feature { display: grid; grid-template-rows: auto 1fr; min-height: 260px; }
   .tz-card-media {
     background: linear-gradient(180deg, rgba(0,0,0,.05), rgba(0,0,0,.00));
     position: relative;
+  }
+
+  /* --- Card image area (hero cards) --- */
+  .tz-home .tz-card-media-hero {
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    overflow: hidden;
+    background: #ececec;
+  }
+
+  .tz-home .tz-card-media-hero img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
   }
 
   /* If you set data-bg to a valid URL, it becomes the background image */
