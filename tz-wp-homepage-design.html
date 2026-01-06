@@ -1,1040 +1,767 @@
-<!-- ===== Tamil.Zone Homepage (Mockup Match / SEO-friendly) =====
-<!-- Paste this into a WordPress “Custom HTML” block on the homepage (below the theme hero). -->
-<!-- Notes:
-  - Update URLs marked "UPDATE ME" if your slugs differ.
-  - The name/news items are placeholders for now. Later we can replace them with shortcodes / dynamic WP queries.
-  - This block is built to align with NewsPanda / WPInterface CSS variables.
+<!-- Tamil.Zone Homepage Block (Mockup-aligned)
+     Paste into a WP Custom HTML block (below theme hero).
+     Scoped styles: everything is under .tz-home.
 -->
 
+<div class="tz-home" itemscope itemtype="https://schema.org/WebPage">
+  <!-- SEO: Primary headline for the homepage block -->
+  <header class="tz-hero" aria-labelledby="tz-hero-title">
+    <p class="tz-eyebrow">Welcome</p>
+    <h1 id="tz-hero-title" class="tz-title">Everything Tamil — Names, News & Language Tools</h1>
+    <p class="tz-subtitle">
+      Discover meaningful Tamil baby names, read curated Tamil news, and use fast language tools like Bamini → Unicode.
+    </p>
+
+    <!-- Primary CTAs (order matters) -->
+    <nav class="tz-cta" aria-label="Primary actions">
+      <a class="tz-btn tz-btn-primary" href="/tamil-name-finder/">Explore Baby Names</a>
+      <a class="tz-btn tz-btn-ghost" href="/news/">Read News</a>
+      <a class="tz-btn tz-btn-ghost" href="/tamil-bamini/">Open Converter</a>
+    </nav>
+
+    <!-- Top feature cards (matches mockup) -->
+    <section class="tz-topcards" aria-label="Featured tools">
+      <!-- 1) Baby names (largest) -->
+      <article class="tz-card tz-card-feature" aria-labelledby="tz-card-names">
+        <div class="tz-card-media tz-media-names" aria-hidden="true"></div>
+        <div class="tz-card-body">
+          <h2 id="tz-card-names" class="tz-card-title">Search Baby Names</h2>
+          <p class="tz-card-desc">Find names by meaning, origin, style, and more — with a clean browsing experience.</p>
+
+          <div class="tz-chiprow" aria-label="Popular searches">
+            <a class="tz-chip" href="/tamil-name-finder/?q=Rithan">Rithan</a>
+            <a class="tz-chip" href="/tamil-name-finder/?q=Anaya">Anaya</a>
+            <a class="tz-chip" href="/tamil-name-finder/?q=Viran">Viran</a>
+            <a class="tz-chip" href="/tamil-name-finder/?meaning=nature">Nature</a>
+          </div>
+
+          <div class="tz-card-actions">
+            <a class="tz-btn tz-btn-primary" href="/tamil-name-finder/">Explore Baby Names</a>
+            <a class="tz-link" href="/tamil-name-finder/?filters=meaning">Browse by meaning →</a>
+          </div>
+
+          <p class="tz-note">
+            Name of the day: <a href="/tamil-name-finder/" class="tz-inline-link">Aadhira</a> (Moonlight)
+          </p>
+        </div>
+      </article>
+
+      <!-- 2) News -->
+      <article class="tz-card tz-card-small" aria-labelledby="tz-card-news">
+        <div class="tz-card-media tz-media-news" aria-hidden="true"></div>
+        <div class="tz-card-body">
+          <h2 id="tz-card-news" class="tz-card-title">Read Tamil News</h2>
+          <p class="tz-card-desc">Readable, fast, and curated — with clean category browsing.</p>
+          <div class="tz-card-actions">
+            <a class="tz-link" href="/news/">Go to News →</a>
+          </div>
+        </div>
+      </article>
+
+      <!-- 3) Bamini converter -->
+      <article class="tz-card tz-card-small" aria-labelledby="tz-card-bamini">
+        <div class="tz-card-media tz-media-bamini" aria-hidden="true"></div>
+        <div class="tz-card-body">
+          <h2 id="tz-card-bamini" class="tz-card-title">Bamini → Unicode</h2>
+          <p class="tz-card-desc">Convert text between Tamil Bamini and Unicode.</p>
+          <div class="tz-card-actions">
+            <a class="tz-link" href="/tamil-bamini/">Open Converter →</a>
+          </div>
+        </div>
+      </article>
+    </section>
+  </header>
+
+  <!-- 1) Baby Names section (Names first) -->
+  <section class="tz-section" aria-labelledby="tz-names-title">
+    <div class="tz-section-head">
+      <h2 id="tz-names-title" class="tz-h2">Find Tamil Baby Names</h2>
+      <p class="tz-muted">Discover names by meaning, origin, and more.</p>
+    </div>
+
+    <div class="tz-grid-2">
+      <!-- left: name cards -->
+      <div class="tz-panel">
+        <div class="tz-namegrid" aria-label="Popular Tamil baby names">
+          <!-- Replace these with real names/links you already have pages for -->
+          <a class="tz-namecard" href="/tamil-name-finder/nila/">
+            <strong>Nila</strong>
+            <span>Moon / glow</span>
+          </a>
+          <a class="tz-namecard" href="/tamil-name-finder/isai/">
+            <strong>Isai</strong>
+            <span>Music</span>
+          </a>
+          <a class="tz-namecard" href="/tamil-name-finder/kavin/">
+            <strong>Kavin</strong>
+            <span>Handsome / poetic</span>
+          </a>
+          <a class="tz-namecard" href="/tamil-name-finder/iniya/">
+            <strong>Iniya</strong>
+            <span>Sweet / pleasant</span>
+          </a>
+          <a class="tz-namecard" href="/tamil-name-finder/aarav/">
+            <strong>Aarav</strong>
+            <span>Peaceful / calm</span>
+          </a>
+          <a class="tz-namecard" href="/tamil-name-finder/mugila/">
+            <strong>Mugila</strong>
+            <span>Cloud</span>
+          </a>
+          <a class="tz-namecard" href="/tamil-name-finder/velan/">
+            <strong>Velan</strong>
+            <span>Murugan / protector</span>
+          </a>
+          <a class="tz-namecard" href="/tamil-name-finder/poovi/">
+            <strong>Poovi</strong>
+            <span>Flower</span>
+          </a>
+        </div>
+
+        <div class="tz-row">
+          <a class="tz-btn tz-btn-primary" href="/tamil-name-finder/">Explore all names</a>
+          <a class="tz-btn tz-btn-ghost" href="/tamil-name-finder/?filters=gender">Filter by gender</a>
+          <a class="tz-btn tz-btn-ghost" href="/tamil-name-finder/?filters=meaning">Filter by meaning</a>
+        </div>
+      </div>
+
+      <!-- right: Name of the day -->
+      <aside class="tz-panel tz-aside" aria-labelledby="tz-nod-title">
+        <h3 id="tz-nod-title" class="tz-h3">Name of the day</h3>
+        <div class="tz-nod">
+          <div class="tz-nod-name">
+            <strong>Aadhira</strong>
+            <span>(Moonlight)</span>
+          </div>
+          <dl class="tz-nod-meta">
+            <div><dt>Gender</dt><dd>Female</dd></div>
+            <div><dt>Theme</dt><dd>Nature</dd></div>
+          </dl>
+          <a class="tz-btn tz-btn-primary" href="/tamil-name-finder/">View name page</a>
+        </div>
+      </aside>
+    </div>
+  </section>
+
+  <!-- 2) News section -->
+  <section class="tz-section" aria-labelledby="tz-news-title">
+    <div class="tz-section-head">
+      <h2 id="tz-news-title" class="tz-h2">Latest Tamil News</h2>
+      <p class="tz-muted">Read the latest updates and top stories.</p>
+    </div>
+
+    <div class="tz-grid-2">
+      <div class="tz-panel">
+        <div class="tz-newsgrid" aria-label="Featured news">
+          <!-- Swap placeholders with your real WP /news/ posts later -->
+          <article class="tz-story">
+            <div class="tz-story-img tz-media-story" aria-hidden="true"></div>
+            <h3 class="tz-story-title"><a href="/news/">Kollywood Star Bags Best Actor Award</a></h3>
+            <p class="tz-story-meta">Cinema • 2 min read</p>
+          </article>
+          <article class="tz-story">
+            <div class="tz-story-img tz-media-story" aria-hidden="true"></div>
+            <h3 class="tz-story-title"><a href="/news/">Tips for a Healthy Pongal Feast</a></h3>
+            <p class="tz-story-meta">Lifestyle • 3 min read</p>
+          </article>
+          <article class="tz-story">
+            <div class="tz-story-img tz-media-story" aria-hidden="true"></div>
+            <h3 class="tz-story-title"><a href="/news/">India Defeat South Africa in a Thrilling Match</a></h3>
+            <p class="tz-story-meta">Sports • 4 min read</p>
+          </article>
+        </div>
+
+        <div class="tz-row">
+          <a class="tz-btn tz-btn-primary" href="/news/">Go to News</a>
+          <a class="tz-btn tz-btn-ghost" href="/news/?cat=politics">Politics</a>
+          <a class="tz-btn tz-btn-ghost" href="/news/?cat=cinema">Cinema</a>
+          <a class="tz-btn tz-btn-ghost" href="/news/?cat=sports">Sports</a>
+        </div>
+      </div>
+
+      <aside class="tz-panel tz-aside" aria-labelledby="tz-trending-title">
+        <h3 id="tz-trending-title" class="tz-h3">Trending Now</h3>
+        <ul class="tz-list">
+          <li><a href="/news/?cat=politics">Politics</a></li>
+          <li><a href="/news/?cat=cinema">Cinema</a></li>
+          <li><a href="/news/?cat=sports">Sports</a></li>
+          <li><a href="/news/?cat=tech">Tech</a></li>
+        </ul>
+      </aside>
+    </div>
+  </section>
+
+  <!-- 3) Bamini section -->
+  <section class="tz-section" aria-labelledby="tz-bamini-title">
+    <div class="tz-section-head">
+      <h2 id="tz-bamini-title" class="tz-h2">Bamini → Unicode Converter</h2>
+      <p class="tz-muted">Convert between Tamil Bamini and Unicode (preview). Full conversion on the converter page.</p>
+    </div>
+
+    <div class="tz-grid-2">
+      <div class="tz-panel">
+        <form class="tz-convert" action="/tamil-bamini/" method="get">
+          <div class="tz-convert-grid">
+            <label class="tz-field">
+              <span class="tz-label">Bamini Text</span>
+              <textarea name="text" rows="5" placeholder="Paste Bamini text here..."></textarea>
+            </label>
+            <div class="tz-arrow" aria-hidden="true">→</div>
+            <label class="tz-field">
+              <span class="tz-label">Unicode Output</span>
+              <textarea rows="5" placeholder="Unicode output appears on the converter page..." readonly></textarea>
+            </label>
+          </div>
+          <div class="tz-row">
+            <button class="tz-btn tz-btn-primary" type="submit">Convert</button>
+            <a class="tz-btn tz-btn-ghost" href="/tamil-bamini/">Open full converter</a>
+          </div>
+        </form>
+      </div>
+
+      <aside class="tz-panel tz-aside" aria-labelledby="tz-recent-title">
+        <h3 id="tz-recent-title" class="tz-h3">Recent conversions</h3>
+        <ul class="tz-list tz-check">
+          <li><a href="/tamil-bamini/">Tamil text to Unicode</a></li>
+          <li><a href="/tamil-bamini/">Unicode to Bamini</a></li>
+          <li><a href="/tamil-bamini/">Copy-ready formatting</a></li>
+        </ul>
+      </aside>
+    </div>
+  </section>
+
+  <!-- 4) Typing tools -->
+  <section class="tz-section" aria-labelledby="tz-tools-title">
+    <div class="tz-section-head">
+      <h2 id="tz-tools-title" class="tz-h2">Typing Tools & More</h2>
+      <p class="tz-muted">Explore the growing Tamil toolkit.</p>
+    </div>
+
+    <div class="tz-grid-2">
+      <div class="tz-panel">
+        <div class="tz-toolgrid" aria-label="Typing tools">
+          <a class="tz-tool" href="/tamil-typing/">
+            <span class="tz-tool-ico" aria-hidden="true">⌨️</span>
+            <strong>Tamil Keyboard</strong>
+            <span>Type fast with helpers</span>
+          </a>
+          <a class="tz-tool" href="/tamil-typing/">
+            <span class="tz-tool-ico" aria-hidden="true">🗣️</span>
+            <strong>Transliteration Tool</strong>
+            <span>Type in English → Tamil</span>
+          </a>
+          <a class="tz-tool" href="/tamil-typing/">
+            <span class="tz-tool-ico" aria-hidden="true">🔢</span>
+            <strong>Number Converter</strong>
+            <span>Tamil numerals & formats</span>
+          </a>
+        </div>
+        <div class="tz-row">
+          <a class="tz-btn tz-btn-primary" href="/tamil-typing/">Open typing tools</a>
+        </div>
+      </div>
+
+      <aside class="tz-panel tz-aside" aria-labelledby="tz-soon-title">
+        <h3 id="tz-soon-title" class="tz-h3">Coming soon</h3>
+        <p class="tz-muted">New tools launching soon — add a simple newsletter signup here if you want.</p>
+        <a class="tz-btn tz-btn-ghost" href="/">Notify me</a>
+      </aside>
+    </div>
+  </section>
+
+  <!-- Sticky jump bar (order must match) -->
+  <nav class="tz-sticky" aria-label="Quick navigation">
+    <div class="tz-sticky-inner">
+      <div class="tz-sticky-left">
+        <strong>Start exploring Tamil.Zone</strong>
+        <span>Pick a tool and jump in — Baby Names, News, Bamini, and more.</span>
+      </div>
+      <div class="tz-sticky-right" role="list">
+        <a role="listitem" class="tz-pill tz-pill-active" href="/tamil-name-finder/">Baby Names</a>
+        <a role="listitem" class="tz-pill" href="/news/">News</a>
+        <a role="listitem" class="tz-pill" href="/tamil-bamini/">Bamini</a>
+        <a role="listitem" class="tz-pill" href="/tamil-typing/">Typing</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- SEO JSON-LD (safe + static) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "name": "Tamil Zone",
+    "url": "https://tamil.zone/",
+    "potentialAction": {
+      "@type": "SearchAction",
+      "target": "https://tamil.zone/?s={search_term_string}",
+      "query-input": "required name=search_term_string"
+    }
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "Tamil Zone",
+    "url": "https://tamil.zone/"
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "ItemList",
+    "name": "Tamil.Zone tools",
+    "itemListElement": [
+      {"@type":"ListItem","position":1,"name":"Tamil Baby Name Finder","url":"https://tamil.zone/tamil-name-finder/"},
+      {"@type":"ListItem","position":2,"name":"Tamil News","url":"https://tamil.zone/news/"},
+      {"@type":"ListItem","position":3,"name":"Bamini to Unicode Converter","url":"https://tamil.zone/tamil-bamini/"},
+      {"@type":"ListItem","position":4,"name":"Tamil Typing Tools","url":"https://tamil.zone/tamil-typing/"}
+    ]
+  }
+  </script>
+</div>
+
 <style>
-  /* ---------------------------------
-     Theme-aligned tokens
-     --------------------------------- */
+  /* ==========================
+     Tamil.Zone Homepage Styles
+     Scoped under .tz-home
+     ========================== */
+
   .tz-home {
-    --tz-container: 1400px;
-    --tz-gutter: 18px;
-
-    --tz-radius-xl: 20px;
-    --tz-radius-lg: 18px;
-    --tz-radius-md: 14px;
-    --tz-radius-sm: 12px;
-
-    --tz-border: #ececf2;
+    --tz-max: 1400px;
+    --tz-pad: 24px;
+    --tz-radius: 14px;
+    --tz-border: rgba(0,0,0,.08);
+    --tz-shadow: 0 10px 30px rgba(0,0,0,.06);
+    --tz-purple: #6f3cff;
+    --tz-purple-2: #8a63ff;
     --tz-bg: #ffffff;
-    --tz-ink: #111;
-    --tz-muted: #666;
+    --tz-muted: rgba(0,0,0,.62);
 
-    --tz-purple: #7a00df;
-    --tz-purple-2: #9a39ff;
-    --tz-purple-ink: #4b1a7a;
-    --tz-purple-bg: #f6f1ff;
-    --tz-purple-border: #eadcff;
-
-    --tz-shadow-1: 0 8px 22px rgba(0,0,0,.06);
-    --tz-shadow-2: 0 12px 30px rgba(0,0,0,.10);
-
-    font-family: var(--wpi--font-general, "Roboto", sans-serif) !important;
-    font-size: var(--wpi--font-size-general, 1.6rem) !important;
-    font-weight: var(--wpi--font-general-weight, 400) !important;
-    color: var(--tz-ink);
+    font-family: var(--wpi--font-general, "Roboto", sans-serif);
+    font-size: var(--wpi--font-size-general, 1.6rem);
+    line-height: 1.5;
+    color: rgba(0,0,0,.86);
   }
 
   .tz-home * { box-sizing: border-box; }
+  .tz-home a { color: inherit; text-decoration: none; }
+  .tz-home a:hover { text-decoration: underline; }
 
-  .tz-home .tz-container {
-    max-width: var(--tz-container);
+  .tz-hero {
+    max-width: var(--tz-max);
     margin: 0 auto;
-    padding: 0 var(--tz-gutter);
+    padding: 28px var(--tz-pad) 0;
   }
 
-  /* ---------------------------------
-     Typography (use theme variables)
-     --------------------------------- */
-  .tz-home h1,
-  .tz-home h2,
-  .tz-home h3 {
-    font-family: var(--wpi--font-heading, "Roboto", sans-serif) !important;
-    font-weight: var(--wpi--font-heading-weight, 400) !important;
-    letter-spacing: -0.01em;
-    margin: 0;
-    color: var(--tz-ink);
-  }
-
-  .tz-home h1 { font-size: var(--wpi--font-size-large, 3.4rem) !important; line-height: 1.12; }
-  .tz-home h2 { font-size: var(--wpi--font-size-medium, 2.4rem) !important; line-height: 1.2; }
-  .tz-home h3 { font-size: var(--wpi--font-size-small, 2rem) !important; line-height: 1.25; }
-
-  .tz-home p,
-  .tz-home li,
-  .tz-home a,
-  .tz-home button,
-  .tz-home input,
-  .tz-home textarea {
-    font-family: var(--wpi--font-general, "Roboto", sans-serif) !important;
-    font-size: var(--wpi--font-size-general, 1.6rem) !important;
-  }
-
-  .tz-home .tz-muted { color: var(--tz-muted) !important; }
-
-  /* ---------------------------------
-     Base UI
-     --------------------------------- */
-  .tz-home .tz-card {
-    background: var(--tz-bg);
-    border: 1px solid var(--tz-border);
-    border-radius: var(--tz-radius-xl);
-    box-shadow: var(--tz-shadow-1);
-  }
-
-  .tz-home .tz-soft {
-    background: linear-gradient(180deg, var(--tz-purple-bg) 0%, #fff 70%);
-    border-color: var(--tz-purple-border);
-  }
-
-  .tz-home .tz-divider {
-    border: none;
-    border-top: 1px solid var(--tz-border);
-    margin: 28px 0;
-  }
-
-  .tz-home .tz-eyebrow {
-    letter-spacing: .10em;
+  .tz-eyebrow {
+    font-size: var(--wpi--font-size-x-small, 1.4rem);
+    letter-spacing: .08em;
     text-transform: uppercase;
-    color: #777;
-    margin: 0 0 8px;
-    font-size: var(--wpi--font-size-x-small, 1.4rem) !important;
-    font-weight: 900;
+    color: rgba(0,0,0,.45);
+    margin: 0 0 6px;
   }
 
-  .tz-home .tz-badge {
-    display: inline-flex;
-    align-items: center;
-    gap: 8px;
-    padding: 6px 10px;
-    border-radius: 999px;
-    background: #f5f5f7;
-    border: 1px solid #ececf2;
-    color: #555;
-    font-weight: 900;
-    line-height: 1;
-    font-size: var(--wpi--font-size-x-small, 1.4rem) !important;
+  .tz-title {
+    font-family: var(--wpi--font-heading, "Roboto", sans-serif);
+    font-weight: var(--wpi--font-heading-weight, 400);
+    font-size: clamp(2.6rem, 2.2vw, 3.4rem);
+    margin: 0 0 6px;
   }
 
-  .tz-home .tz-chip-row { display: flex; flex-wrap: wrap; gap: 8px; }
-
-  .tz-home .tz-chip {
-    display: inline-flex;
-    align-items: center;
-    gap: 8px;
-    padding: 8px 12px;
-    border-radius: 999px;
-    background: #fff;
-    border: 1px solid #eee;
-    color: #444;
-    font-size: var(--wpi--font-size-x-small, 1.4rem) !important;
+  .tz-subtitle {
+    margin: 0 0 16px;
+    color: var(--tz-muted);
+    max-width: 68ch;
   }
 
-  .tz-home .tz-tabs { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; }
-
-  .tz-home .tz-tab {
-    padding: 6px 10px;
-    border-radius: 999px;
-    background: #f4f0ff;
-    color: var(--tz-purple-ink);
-    font-weight: 900;
-    font-size: var(--wpi--font-size-x-small, 1.4rem) !important;
-  }
-
-  .tz-home .tz-btn {
-    display: inline-flex !important;
-    align-items: center !important;
-    justify-content: center !important;
-    gap: 8px;
-    padding: 11px 14px;
-    border-radius: var(--tz-radius-sm);
-    text-decoration: none !important;
-    line-height: 1.1 !important;
-    border: 1px solid transparent;
-    transition: transform .12s ease, box-shadow .12s ease;
-    font-weight: 900 !important;
-    white-space: nowrap;
-  }
-
-  .tz-home .tz-btn:hover { transform: translateY(-1px); }
-
-  .tz-home .tz-btn--primary {
-    background: linear-gradient(135deg, var(--tz-purple), var(--tz-purple-2));
-    color: #fff !important;
-    box-shadow: 0 10px 22px rgba(122,0,223,.22);
-  }
-
-  .tz-home .tz-btn--secondary {
-    background: #f7f1ff;
-    border-color: #dec7ff;
-    color: var(--tz-purple-ink) !important;
-  }
-
-  .tz-home .tz-link {
-    color: var(--tz-purple-ink);
-    font-weight: 900;
-    text-decoration: none;
-  }
-
-  .tz-home .tz-link:hover { text-decoration: underline; }
-
-  /* ---------------------------------
-     HERO CONTENT CARD (no theme hero changes)
-     --------------------------------- */
-  .tz-home .tz-top { padding: 34px 0 8px; }
-
-  .tz-home .tz-top-card { padding: 22px 18px 18px; }
-
-  .tz-home .tz-lead {
-    color: #555;
-    margin: 10px 0 14px;
-    max-width: 920px;
-  }
-
-  .tz-home .tz-cta-row { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 12px; }
-
-  .tz-home .tz-why-row {
-    margin-top: 14px;
+  .tz-cta {
     display: flex;
+    gap: 10px;
     flex-wrap: wrap;
-    gap: 10px;
-    align-items: center;
+    margin: 10px 0 18px;
   }
 
-  .tz-home .tz-why-title { font-weight: 900; color: #2b0a45; }
-
-  /* ---------------------------------
-     Mockup-style bento (real previews)
-     Order: Baby Names → News → Bamini → Typing
-     --------------------------------- */
-  .tz-home .tz-bento {
-    margin-top: 16px;
-    display: grid;
-    grid-template-columns: 1.35fr 1fr;
-    gap: 14px;
-    align-items: stretch;
-  }
-
-  .tz-home .tz-bento-left,
-  .tz-home .tz-bento-right {
-    display: grid;
-    gap: 14px;
-  }
-
-  .tz-home .tz-bento-left { grid-template-rows: 1fr; }
-  .tz-home .tz-bento-right { grid-template-rows: 1fr 1fr; }
-
-  .tz-home .tz-tile {
-    border-radius: var(--tz-radius-lg);
-    border: 1px solid var(--tz-border);
-    background: #fff;
-    padding: 16px;
-    box-shadow: var(--tz-shadow-1);
-    transition: transform .12s ease, box-shadow .12s ease;
-    height: 100%;
-  }
-
-  .tz-home .tz-tile:hover { transform: translateY(-2px); box-shadow: var(--tz-shadow-2); }
-
-  .tz-home .tz-tile--primary {
-    background: linear-gradient(180deg, var(--tz-purple-bg) 0%, #ffffff 70%);
-    border-color: var(--tz-purple-border);
-  }
-
-  .tz-home .tz-tile-head {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    margin-bottom: 8px;
-  }
-
-  .tz-home .tz-icon {
-    width: 34px;
-    height: 34px;
-    border-radius: 12px;
-    background: var(--tz-purple-bg);
-    border: 1px solid var(--tz-purple-border);
+  .tz-btn {
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    font-weight: 900;
-    color: var(--tz-purple-ink);
-  }
-
-  .tz-home .tz-tile-title { font-weight: 900; margin: 0; }
-  .tz-home .tz-tile-desc { margin: 0; color: #555; }
-
-  .tz-home .tz-inline {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 12px;
-    flex-wrap: wrap;
-    margin-top: 10px;
-  }
-
-  .tz-home .tz-mini {
-    margin-top: 12px;
-    padding: 12px;
-    border-radius: 12px;
-    background: #fff;
-    border: 1px solid #ece7f6;
-  }
-
-  .tz-home .tz-mini strong {
-    display: block;
-    font-size: var(--wpi--font-size-x-small, 1.4rem) !important;
-    margin-bottom: 6px;
-    color: #444;
-    font-weight: 900;
-  }
-
-  .tz-home .tz-mini span { display: block; color: #333; }
-
-  /* Name chips preview (SEO-friendly internal links) */
-  .tz-home .tz-name-chips {
-    display: flex;
-    flex-wrap: wrap;
     gap: 8px;
-    margin-top: 10px;
-  }
-
-  .tz-home .tz-name-chip {
-    display: inline-flex;
-    align-items: center;
-    gap: 8px;
-    padding: 8px 10px;
+    padding: 10px 14px;
     border-radius: 999px;
+    border: 1px solid var(--tz-border);
     background: #fff;
-    border: 1px solid #ece7f6;
+    font-weight: 600;
+    font-size: var(--wpi--font-size-x-small, 1.4rem);
+    line-height: 1;
+    box-shadow: 0 6px 18px rgba(0,0,0,.05);
+  }
+
+  .tz-btn-primary {
+    background: linear-gradient(135deg, var(--tz-purple), var(--tz-purple-2));
+    color: #fff;
+    border-color: transparent;
     text-decoration: none;
-    color: #333;
-    font-weight: 800;
-    font-size: var(--wpi--font-size-x-small, 1.4rem) !important;
   }
 
-  .tz-home .tz-name-chip:hover { border-color: #d7bfff; }
-
-  .tz-home .tz-pill {
-    padding: 4px 8px;
-    border-radius: 999px;
-    font-weight: 900;
-    font-size: var(--wpi--font-size-x-small, 1.4rem) !important;
-    background: #f2f2f6;
-    border: 1px solid #ececf2;
-    color: #555;
+  .tz-btn-ghost {
+    background: rgba(111, 60, 255, .06);
+    border-color: rgba(111, 60, 255, .18);
+    color: rgba(0,0,0,.84);
+    text-decoration: none;
   }
 
-  /* Featured story mini-card */
-  .tz-home .tz-story {
-    margin-top: 10px;
+  .tz-link {
+    font-weight: 600;
+    font-size: var(--wpi--font-size-x-small, 1.4rem);
+    color: rgba(111, 60, 255, 1);
+  }
+
+  .tz-inline-link { color: rgba(111, 60, 255, 1); font-weight: 600; }
+
+  /* Top cards */
+  .tz-topcards {
     display: grid;
-    grid-template-columns: 84px 1fr;
-    gap: 12px;
-    align-items: center;
-    border-radius: 14px;
-    padding: 10px;
-    border: 1px solid #ececf2;
-    background: #fff;
+    grid-template-columns: 2fr 1fr 1fr;
+    gap: 14px;
+    margin-top: 8px;
   }
 
-  .tz-home .tz-story-thumb {
-    width: 84px;
-    height: 58px;
-    border-radius: 12px;
-    background: #f2f2f6;
-    border: 1px solid #ececf2;
+  .tz-card {
+    background: var(--tz-bg);
+    border: 1px solid var(--tz-border);
+    border-radius: var(--tz-radius);
     overflow: hidden;
+    box-shadow: var(--tz-shadow);
   }
 
-  .tz-home .tz-story-thumb img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    display: block;
+  .tz-card-body { padding: 16px; }
+
+  .tz-card-title {
+    font-family: var(--wpi--font-heading, "Roboto", sans-serif);
+    font-weight: 700;
+    font-size: 1.8rem;
+    margin: 0 0 6px;
   }
 
-  .tz-home .tz-story-title {
-    margin: 0;
-    font-weight: 900;
-    font-size: var(--wpi--font-size-general, 1.6rem) !important;
+  .tz-card-desc {
+    margin: 0 0 12px;
+    color: var(--tz-muted);
+    font-size: var(--wpi--font-size-x-small, 1.4rem);
   }
 
-  .tz-home .tz-story-meta {
-    margin: 6px 0 0;
-    color: #777;
-    font-size: var(--wpi--font-size-x-small, 1.4rem) !important;
-  }
-
-  /* Mini converter preview */
-  .tz-home .tz-mini-converter {
-    margin-top: 10px;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 10px;
-  }
-
-  .tz-home .tz-mini-converter textarea {
-    width: 100%;
-    min-height: 78px;
-    resize: none;
-    border-radius: 12px;
-    border: 1px solid #ececf2;
-    padding: 10px;
-    background: #fff;
-    color: #333;
-  }
-
-  .tz-home .tz-mini-converter .tz-mini-actions {
-    grid-column: 1 / -1;
+  .tz-card-actions {
     display: flex;
-    justify-content: flex-end;
-    gap: 10px;
+    gap: 12px;
+    align-items: center;
     flex-wrap: wrap;
   }
 
-  /* Tools shortcuts */
-  .tz-home .tz-shortcuts {
-    margin-top: 10px;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 10px;
+  .tz-note {
+    margin: 12px 0 0;
+    font-size: var(--wpi--font-size-x-small, 1.4rem);
+    color: rgba(0,0,0,.62);
   }
 
-  .tz-home .tz-shortcut {
-    border: 1px solid #ececf2;
-    border-radius: 14px;
-    padding: 12px;
-    background: #fff;
+  .tz-card-media {
+    height: 120px;
+    border-bottom: 1px solid var(--tz-border);
+    background: #f6f6fb;
+  }
+
+  /* “Images” are gradients so nothing breaks if you don't supply assets */
+  .tz-media-names {
+    background: radial-gradient(1200px 300px at 10% 0%, rgba(111,60,255,.35), transparent 55%),
+                radial-gradient(800px 280px at 70% 20%, rgba(138,99,255,.25), transparent 60%),
+                linear-gradient(180deg, rgba(111,60,255,.18), rgba(255,255,255,1));
+  }
+
+  .tz-media-news {
+    background: radial-gradient(900px 280px at 20% 10%, rgba(0,0,0,.18), transparent 60%),
+                linear-gradient(180deg, rgba(0,0,0,.06), rgba(255,255,255,1));
+  }
+
+  .tz-media-bamini {
+    background: radial-gradient(900px 260px at 20% 10%, rgba(111,60,255,.25), transparent 60%),
+                linear-gradient(180deg, rgba(111,60,255,.10), rgba(255,255,255,1));
+  }
+
+  .tz-chiprow {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+    margin: 0 0 12px;
+  }
+
+  .tz-chip {
+    font-size: 1.3rem;
+    padding: 7px 10px;
+    border-radius: 999px;
+    border: 1px solid rgba(0,0,0,.08);
+    background: rgba(0,0,0,.03);
     text-decoration: none;
-    color: #333;
-    font-weight: 900;
   }
 
-  .tz-home .tz-shortcut span {
-    display: block;
-    margin-top: 6px;
-    color: #666;
-    font-weight: 400;
+  .tz-chip:hover { background: rgba(111,60,255,.08); border-color: rgba(111,60,255,.20); }
+
+  /* Sections */
+  .tz-section {
+    max-width: var(--tz-max);
+    margin: 26px auto 0;
+    padding: 0 var(--tz-pad);
   }
 
-  /* Responsive for bento */
-  @media (max-width: 980px) {
-    .tz-home .tz-bento { grid-template-columns: 1fr; }
-    .tz-home .tz-bento-right { grid-template-rows: auto; }
+  .tz-section-head { margin-bottom: 12px; }
+
+  .tz-h2 {
+    font-family: var(--wpi--font-heading, "Roboto", sans-serif);
+    font-weight: 700;
+    font-size: 2.2rem;
+    margin: 0;
   }
 
-  @media (max-width: 640px) {
-    .tz-home .tz-shortcuts { grid-template-columns: 1fr; }
-    .tz-home .tz-mini-converter { grid-template-columns: 1fr; }
-    .tz-home .tz-story { grid-template-columns: 1fr; }
-    .tz-home .tz-story-thumb { width: 100%; height: 140px; }
+  .tz-muted {
+    margin: 4px 0 0;
+    color: var(--tz-muted);
+    font-size: var(--wpi--font-size-x-small, 1.4rem);
   }
 
-  /* ---------------------------------
-     Content preview sections
-     --------------------------------- */
-  .tz-home .tz-section {
-    padding: 20px 0;
-  }
-
-  .tz-home .tz-section-grid {
+  .tz-grid-2 {
     display: grid;
-    grid-template-columns: 1fr 0.9fr;
-    gap: 22px;
+    grid-template-columns: 2fr 1fr;
+    gap: 14px;
     align-items: start;
   }
 
-  .tz-home .tz-section-main h2 { margin: 12px 0 10px; }
-
-  .tz-home .tz-section-main ul {
-    margin: 0 0 16px;
-    color: #555;
-    padding-left: 18px;
+  .tz-panel {
+    background: var(--tz-bg);
+    border: 1px solid var(--tz-border);
+    border-radius: var(--tz-radius);
+    padding: 16px;
+    box-shadow: var(--tz-shadow);
   }
 
-  .tz-home .tz-section-main ul li { margin: 6px 0; }
+  .tz-aside { position: sticky; top: 18px; }
 
-  .tz-home .tz-highlight {
-    background: #fff;
-    border: 1px solid #eee;
-    border-radius: var(--tz-radius-md);
-    padding: 14px 16px;
+  .tz-h3 {
+    font-family: var(--wpi--font-heading, "Roboto", sans-serif);
+    font-weight: 700;
+    font-size: 1.6rem;
+    margin: 0 0 10px;
   }
 
-  .tz-home .tz-highlight .tz-h-label {
-    font-weight: 900;
-    color: #777;
-    margin-bottom: 6px;
-    font-size: var(--wpi--font-size-x-small, 1.4rem) !important;
-  }
-
-  .tz-home .tz-highlight .tz-h-title {
-    font-weight: 900;
-    margin: 0 0 6px;
-    font-size: var(--wpi--font-size-general, 1.6rem) !important;
-  }
-
-  .tz-home .tz-highlight .tz-h-desc { color: #666; margin: 0; }
-
-  /* Names grid preview */
-  .tz-home .tz-grid {
-    margin-top: 14px;
+  /* Name grid */
+  .tz-namegrid {
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 12px;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 10px;
+    margin-bottom: 12px;
   }
 
-  .tz-home .tz-item {
-    border: 1px solid #ececf2;
-    border-radius: 16px;
+  .tz-namecard {
+    border: 1px solid rgba(0,0,0,.08);
+    border-radius: 12px;
     padding: 12px;
     background: #fff;
-    text-decoration: none;
-    color: #333;
-    box-shadow: 0 6px 16px rgba(0,0,0,.04);
-    transition: transform .12s ease, box-shadow .12s ease;
+    min-height: 74px;
   }
 
-  .tz-home .tz-item:hover { transform: translateY(-2px); box-shadow: 0 10px 22px rgba(0,0,0,.08); }
+  .tz-namecard strong { display: block; font-size: 1.5rem; margin-bottom: 2px; }
+  .tz-namecard span { display: block; color: var(--tz-muted); font-size: 1.3rem; }
 
-  .tz-home .tz-item h3 { margin: 0; font-weight: 900; }
-
-  .tz-home .tz-item p {
-    margin: 6px 0 0;
-    color: #666;
-    font-size: var(--wpi--font-size-x-small, 1.4rem) !important;
-  }
-
-  .tz-home .tz-item .tz-meta {
-    margin-top: 10px;
+  .tz-row {
     display: flex;
-    gap: 8px;
     flex-wrap: wrap;
+    gap: 10px;
+    align-items: center;
   }
 
-  @media (max-width: 980px) { .tz-home .tz-grid { grid-template-columns: repeat(2, 1fr); } }
-  @media (max-width: 520px) { .tz-home .tz-grid { grid-template-columns: 1fr; } }
+  /* Name-of-day */
+  .tz-nod { display: grid; gap: 10px; }
+  .tz-nod-name strong { font-size: 1.8rem; display: block; }
+  .tz-nod-name span { color: var(--tz-muted); font-size: 1.4rem; }
 
-  /* News cards preview */
-  .tz-home .tz-news-grid {
-    margin-top: 14px;
+  .tz-nod-meta {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 12px;
+    gap: 6px;
+    margin: 0;
   }
 
-  .tz-home .tz-news {
-    border: 1px solid #ececf2;
-    border-radius: 16px;
+  .tz-nod-meta div {
+    display: grid;
+    grid-template-columns: 80px 1fr;
+    gap: 10px;
+  }
+
+  .tz-nod-meta dt { color: var(--tz-muted); font-size: 1.3rem; }
+  .tz-nod-meta dd { margin: 0; font-weight: 600; font-size: 1.3rem; }
+
+  /* News grid */
+  .tz-newsgrid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 12px;
+    margin-bottom: 12px;
+  }
+
+  .tz-story {
+    border: 1px solid rgba(0,0,0,.08);
+    border-radius: 12px;
     overflow: hidden;
     background: #fff;
-    text-decoration: none;
-    color: #333;
-    box-shadow: 0 6px 16px rgba(0,0,0,.04);
-    transition: transform .12s ease, box-shadow .12s ease;
+    box-shadow: 0 8px 18px rgba(0,0,0,.04);
   }
 
-  .tz-home .tz-news:hover { transform: translateY(-2px); box-shadow: 0 10px 22px rgba(0,0,0,.08); }
-
-  .tz-home .tz-news .tz-news-thumb {
-    height: 140px;
-    background: #f2f2f6;
-    border-bottom: 1px solid #ececf2;
+  .tz-story-img {
+    height: 96px;
+    background: radial-gradient(600px 200px at 10% 10%, rgba(111,60,255,.18), transparent 60%),
+                linear-gradient(180deg, rgba(0,0,0,.04), rgba(255,255,255,1));
   }
 
-  .tz-home .tz-news .tz-news-thumb img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    display: block;
+  .tz-story-title {
+    margin: 10px 12px 2px;
+    font-size: 1.4rem;
+    line-height: 1.3;
   }
 
-  .tz-home .tz-news .tz-news-body { padding: 12px; }
-
-  .tz-home .tz-news .tz-news-cat {
-    font-weight: 900;
-    color: #777;
-    font-size: var(--wpi--font-size-x-small, 1.4rem) !important;
+  .tz-story-meta {
+    margin: 0 12px 12px;
+    color: var(--tz-muted);
+    font-size: 1.2rem;
   }
 
-  .tz-home .tz-news .tz-news-title {
-    margin: 6px 0 0;
-    font-weight: 900;
+  /* Lists */
+  .tz-list {
+    margin: 0;
+    padding-left: 18px;
+    display: grid;
+    gap: 8px;
+    color: rgba(0,0,0,.82);
   }
 
-  .tz-home .tz-news .tz-news-desc {
-    margin: 8px 0 0;
-    color: #666;
-    font-size: var(--wpi--font-size-x-small, 1.4rem) !important;
-    line-height: 1.6;
-  }
+  .tz-check { padding-left: 18px; }
 
-  @media (max-width: 980px) { .tz-home .tz-news-grid { grid-template-columns: 1fr; } }
-
-  /* ---------------------------------
-     Bottom CTA band
-     --------------------------------- */
-  .tz-home .tz-bottom { padding: 12px 0 40px; }
-
-  .tz-home .tz-bottom-band {
-    border: 1px solid #eee;
-    border-radius: var(--tz-radius-xl);
-    background: #111;
-    color: #fff;
-    padding: 18px;
-    display: flex;
-    flex-wrap: wrap;
-    gap: 12px;
+  /* Converter */
+  .tz-convert-grid {
+    display: grid;
+    grid-template-columns: 1fr auto 1fr;
+    gap: 10px;
     align-items: center;
-    justify-content: space-between;
+    margin-bottom: 12px;
   }
 
-  .tz-home .tz-bottom-title { font-weight: 900; margin: 0 0 4px; }
-  .tz-home .tz-bottom-sub { color: #cfcfcf; }
-
-  .tz-home .tz-bottom-links { display: flex; flex-wrap: wrap; gap: 10px; }
-
-  .tz-home .tz-pillbtn {
-    display: inline-block;
-    padding: 10px 14px;
+  .tz-field textarea {
+    width: 100%;
+    padding: 10px;
     border-radius: 12px;
+    border: 1px solid rgba(0,0,0,.12);
+    font-family: var(--wpi--font-general, "Roboto", sans-serif);
+    font-size: var(--wpi--font-size-general, 1.6rem);
+  }
+
+  .tz-label {
+    display: block;
+    margin: 0 0 6px;
+    color: var(--tz-muted);
+    font-size: 1.3rem;
+    font-weight: 600;
+  }
+
+  .tz-arrow {
+    font-size: 2.2rem;
+    color: rgba(0,0,0,.42);
+    padding: 0 2px;
+  }
+
+  /* Tools */
+  .tz-toolgrid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 12px;
+    margin-bottom: 12px;
+  }
+
+  .tz-tool {
+    border: 1px solid rgba(0,0,0,.08);
+    border-radius: 12px;
+    padding: 14px;
+    background: #fff;
+    display: grid;
+    gap: 4px;
+    min-height: 92px;
+  }
+
+  .tz-tool-ico { font-size: 2.2rem; }
+  .tz-tool strong { font-size: 1.4rem; }
+  .tz-tool span { color: var(--tz-muted); font-size: 1.2rem; }
+
+  /* Sticky bar */
+  .tz-sticky {
+    position: sticky;
+    bottom: 0;
+    margin-top: 18px;
+    z-index: 5;
+  }
+
+  .tz-sticky-inner {
+    max-width: var(--tz-max);
+    margin: 0 auto;
+    padding: 12px var(--tz-pad) 18px;
+    display: flex;
+    gap: 12px;
+  }
+
+  .tz-sticky-left {
+    flex: 1;
+    background: #111;
+    color: rgba(255,255,255,.92);
+    border-radius: 14px;
+    padding: 12px 14px;
+    display: grid;
+    gap: 2px;
+  }
+
+  .tz-sticky-left strong { font-size: 1.4rem; }
+  .tz-sticky-left span { font-size: 1.2rem; color: rgba(255,255,255,.72); }
+
+  .tz-sticky-right {
+    display: flex;
+    gap: 8px;
+    align-items: center;
+    background: #111;
+    border-radius: 14px;
+    padding: 12px 12px;
+  }
+
+  .tz-pill {
+    padding: 8px 10px;
+    border-radius: 999px;
+    border: 1px solid rgba(255,255,255,.18);
+    color: rgba(255,255,255,.92);
+    font-weight: 700;
+    font-size: 1.2rem;
     text-decoration: none;
-    font-weight: 900;
-    color: #fff;
+    background: rgba(255,255,255,.06);
+    white-space: nowrap;
   }
 
-  .tz-home .tz-pillbtn--primary {
+  .tz-pill-active {
     background: linear-gradient(135deg, var(--tz-purple), var(--tz-purple-2));
-    box-shadow: 0 6px 14px rgba(122,0,223,.25);
+    border-color: transparent;
   }
 
-  .tz-home .tz-pillbtn--ghost {
-    border: 1px solid rgba(255,255,255,.35);
-    background: rgba(255,255,255,.08);
+  /* Responsive */
+  @media (max-width: 1100px) {
+    .tz-topcards { grid-template-columns: 1fr; }
+    .tz-grid-2 { grid-template-columns: 1fr; }
+    .tz-aside { position: static; }
+    .tz-namegrid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    .tz-newsgrid { grid-template-columns: 1fr; }
+    .tz-toolgrid { grid-template-columns: 1fr; }
+    .tz-convert-grid { grid-template-columns: 1fr; }
+    .tz-arrow { display: none; }
+    .tz-sticky-inner { flex-direction: column; }
+    .tz-sticky-right { justify-content: space-between; }
   }
 </style>
-
-<!-- SEO: Structured data (Organization + Website + ItemList of key tools) -->
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@graph": [
-    {
-      "@type": "Organization",
-      "name": "Tamil Zone",
-      "url": "https://tamil.zone/"
-    },
-    {
-      "@type": "WebSite",
-      "name": "Tamil Zone",
-      "url": "https://tamil.zone/",
-      "potentialAction": {
-        "@type": "SearchAction",
-        "target": "https://tamil.zone/?s={search_term_string}",
-        "query-input": "required name=search_term_string"
-      }
-    },
-    {
-      "@type": "ItemList",
-      "name": "Tamil.Zone Tools",
-      "itemListElement": [
-        {"@type":"ListItem","position":1,"name":"Tamil Baby Names","url":"https://tamil.zone/tamil-name-finder/"},
-        {"@type":"ListItem","position":2,"name":"Tamil News","url":"https://tamil.zone/news/"},
-        {"@type":"ListItem","position":3,"name":"Bamini ↔ Unicode Converter","url":"https://tamil.zone/tamil-bamini/"},
-        {"@type":"ListItem","position":4,"name":"Tamil Typing Tools","url":"https://tamil.zone/tamil-typing/"}
-      ]
-    }
-  ]
-}
-</script>
-
-<div class="tz-home">
-
-  <!-- TOP CONTENT CARD (matches mockup feel; no theme hero edits) -->
-  <section class="tz-top" aria-labelledby="tz-home-h1">
-    <div class="tz-container">
-      <div class="tz-card tz-top-card">
-        <p class="tz-eyebrow">Welcome</p>
-        <h1 id="tz-home-h1">Everything Tamil — Names, News &amp; Language Tools</h1>
-        <p class="tz-lead">
-          Explore meaningful Tamil baby names, read curated Tamil news, and use fast language tools like
-          <a class="tz-link" href="https://tamil.zone/tamil-bamini/">Bamini ↔ Unicode conversion</a> — all in one place.
-        </p>
-
-        <div class="tz-chip-row" style="margin: 0 0 12px;">
-          <span class="tz-chip">⚡ Fast &amp; mobile-friendly</span>
-          <span class="tz-chip">🧠 Smart filters &amp; discovery</span>
-          <span class="tz-chip">📰 Fresh content daily</span>
-          <span class="tz-chip">🔤 Clean conversions</span>
-        </div>
-
-        <div class="tz-cta-row">
-          <a class="tz-btn tz-btn--primary" href="https://tamil.zone/tamil-name-finder/">Explore Baby Names →</a>
-          <a class="tz-btn tz-btn--secondary" href="https://tamil.zone/tamil-bamini/">Open Converter →</a>
-          <a class="tz-btn tz-btn--secondary" href="https://tamil.zone/news/">Read News →</a>
-        </div>
-
-        <div class="tz-why-row" aria-label="Why Tamil.Zone">
-          <div class="tz-why-title">Why Tamil.Zone</div>
-          <div class="tz-tabs">
-            <span class="tz-tab">Fast &amp; clean</span>
-            <span class="tz-tab">Meaning-first names</span>
-            <span class="tz-tab">Readable news</span>
-            <span class="tz-tab">Growing toolkit</span>
-          </div>
-        </div>
-
-        <!-- MOCKUP BENTO (with previews) -->
-        <div class="tz-bento" aria-label="Featured tools">
-
-          <!-- LEFT: Baby names (primary) -->
-          <div class="tz-bento-left">
-            <div class="tz-tile tz-tile--primary" role="region" aria-label="Baby names preview">
-              <div class="tz-tile-head">
-                <span class="tz-icon">👶</span>
-                <h3 class="tz-tile-title">Tamil Baby Names</h3>
-                <span class="tz-pill">Top tool</span>
-              </div>
-              <p class="tz-tile-desc">Filter by meaning, origin, style, and gender — and jump to a name page instantly.</p>
-
-              <div class="tz-mini">
-                <strong>Name of the day</strong>
-                <span><b>Nila</b> — “Moon / glow” (example). <a class="tz-link" href="https://tamil.zone/tamil-name-finder/nila/">Read meaning →</a></span>
-              </div>
-
-              <div class="tz-name-chips" aria-label="Popular names">
-                <!-- UPDATE ME: replace with your top names / existing slugs -->
-                <a class="tz-name-chip" href="https://tamil.zone/tamil-name-finder/nila/">Nila <span class="tz-pill">F</span></a>
-                <a class="tz-name-chip" href="https://tamil.zone/tamil-name-finder/isai/">Isai <span class="tz-pill">F</span></a>
-                <a class="tz-name-chip" href="https://tamil.zone/tamil-name-finder/aarav/">Aarav <span class="tz-pill">M</span></a>
-                <a class="tz-name-chip" href="https://tamil.zone/tamil-name-finder/kavin/">Kavin <span class="tz-pill">M</span></a>
-                <a class="tz-name-chip" href="https://tamil.zone/tamil-name-finder/mugila/">Mugila <span class="tz-pill">F</span></a>
-                <a class="tz-name-chip" href="https://tamil.zone/tamil-name-finder/iniya/">Iniya <span class="tz-pill">F</span></a>
-              </div>
-
-              <div class="tz-inline">
-                <a class="tz-link" href="https://tamil.zone/tamil-name-finder/">Browse all names →</a>
-                <a class="tz-btn tz-btn--primary" href="https://tamil.zone/tamil-name-finder/">Find a Name →</a>
-              </div>
-            </div>
-          </div>
-
-          <!-- RIGHT: News + Bamini, then Typing -->
-          <div class="tz-bento-right">
-
-            <div class="tz-tile" role="region" aria-label="News and converter">
-              <div class="tz-tile-head">
-                <span class="tz-icon">📰</span>
-                <h3 class="tz-tile-title">Tamil News</h3>
-              </div>
-              <p class="tz-tile-desc">Clean, readable articles — quick category browsing.</p>
-
-              <a class="tz-story" href="https://tamil.zone/news/" aria-label="Featured news story (placeholder)">
-                <div class="tz-story-thumb" aria-hidden="true">
-                  <!-- Optional: replace with real featured image URL later -->
-                  <img loading="lazy" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='320' height='220'%3E%3Crect width='100%25' height='100%25' fill='%23f2f2f6'/%3E%3C/svg%3E" alt="" />
-                </div>
-                <div>
-                  <p class="tz-story-title">Latest story: curated headline preview</p>
-                  <p class="tz-story-meta">Tech • Finance • Sports • Tamil + English</p>
-                </div>
-              </a>
-
-              <div class="tz-inline">
-                <a class="tz-link" href="https://tamil.zone/news/">Go to News →</a>
-                <a class="tz-btn tz-btn--secondary" href="https://tamil.zone/news/">Latest posts →</a>
-              </div>
-
-              <hr class="tz-divider" style="margin: 14px 0;" />
-
-              <div class="tz-tile-head" style="margin-bottom: 6px;">
-                <span class="tz-icon">🔁</span>
-                <h3 class="tz-tile-title">Bamini ↔ Unicode</h3>
-              </div>
-              <p class="tz-tile-desc">Try a quick preview (full tool opens on the converter page).</p>
-
-              <div class="tz-mini-converter" aria-label="Mini converter preview (non-functional)">
-                <textarea aria-label="Paste Bamini text" placeholder="Paste Bamini here…" disabled></textarea>
-                <textarea aria-label="Unicode output" placeholder="Unicode output…" disabled></textarea>
-                <div class="tz-mini-actions">
-                  <a class="tz-btn tz-btn--primary" href="https://tamil.zone/tamil-bamini/">Open Converter →</a>
-                </div>
-              </div>
-            </div>
-
-            <div class="tz-tile" role="region" aria-label="Typing tools shortcuts">
-              <div class="tz-tile-head">
-                <span class="tz-icon">⌨️</span>
-                <h3 class="tz-tile-title">Typing &amp; Tools</h3>
-              </div>
-              <p class="tz-tile-desc">Jump to popular utilities (more tools coming soon).</p>
-
-              <div class="tz-shortcuts">
-                <!-- UPDATE ME: point to real tools if different -->
-                <a class="tz-shortcut" href="https://tamil.zone/tamil-typing/">Tamil Typing
-                  <span>Type fast with helper tools</span>
-                </a>
-                <a class="tz-shortcut" href="https://tamil.zone/tamil-bamini/">Converters
-                  <span>Bamini ↔ Unicode and more</span>
-                </a>
-              </div>
-
-              <div class="tz-inline">
-                <a class="tz-link" href="https://tamil.zone/tamil-typing/">Browse tools →</a>
-                <a class="tz-btn tz-btn--secondary" href="https://tamil.zone/tamil-typing/">Typing tools →</a>
-              </div>
-            </div>
-
-          </div>
-        </div>
-
-      </div>
-    </div>
-  </section>
-
-  <hr class="tz-divider" />
-
-  <!-- SECTION: BABY NAMES (with preview grid) -->
-  <section class="tz-section" aria-labelledby="tz-baby-h2">
-    <div class="tz-container">
-      <div class="tz-section-grid">
-        <div class="tz-section-main">
-          <div class="tz-badge">👶 <strong>Baby Name Finder</strong></div>
-          <h2 id="tz-baby-h2">Find meaningful Tamil baby names</h2>
-          <p class="tz-muted" style="margin: 0 0 12px;">Search by meaning, origin, gender, and style — then open a dedicated name page.</p>
-
-          <div class="tz-chip-row" style="margin: 0 0 14px;">
-            <span class="tz-chip">🔎 Smart filters</span>
-            <span class="tz-chip">💛 Favorites</span>
-            <span class="tz-chip">📖 Meaning-first</span>
-          </div>
-
-          <!-- Preview grid (placeholders) -->
-          <div class="tz-grid" aria-label="Sample baby names">
-            <!-- UPDATE ME: ensure these slugs exist -->
-            <a class="tz-item" href="https://tamil.zone/tamil-name-finder/nila/">
-              <h3>Nila</h3>
-              <p>Moon / glow</p>
-              <div class="tz-meta"><span class="tz-pill">Girl</span><span class="tz-pill">Nature</span></div>
-            </a>
-            <a class="tz-item" href="https://tamil.zone/tamil-name-finder/isai/">
-              <h3>Isai</h3>
-              <p>Music</p>
-              <div class="tz-meta"><span class="tz-pill">Girl</span><span class="tz-pill">Arts</span></div>
-            </a>
-            <a class="tz-item" href="https://tamil.zone/tamil-name-finder/kavin/">
-              <h3>Kavin</h3>
-              <p>Handsome / poetic</p>
-              <div class="tz-meta"><span class="tz-pill">Boy</span><span class="tz-pill">Classic</span></div>
-            </a>
-            <a class="tz-item" href="https://tamil.zone/tamil-name-finder/iniya/">
-              <h3>Iniya</h3>
-              <p>Sweet / pleasant</p>
-              <div class="tz-meta"><span class="tz-pill">Girl</span><span class="tz-pill">Modern</span></div>
-            </a>
-            <a class="tz-item" href="https://tamil.zone/tamil-name-finder/aarav/">
-              <h3>Aarav</h3>
-              <p>Peaceful / calm</p>
-              <div class="tz-meta"><span class="tz-pill">Boy</span><span class="tz-pill">Modern</span></div>
-            </a>
-            <a class="tz-item" href="https://tamil.zone/tamil-name-finder/mugila/">
-              <h3>Mugila</h3>
-              <p>Cloud</p>
-              <div class="tz-meta"><span class="tz-pill">Girl</span><span class="tz-pill">Nature</span></div>
-            </a>
-            <a class="tz-item" href="https://tamil.zone/tamil-name-finder/velan/">
-              <h3>Velan</h3>
-              <p>Murugan / protector</p>
-              <div class="tz-meta"><span class="tz-pill">Boy</span><span class="tz-pill">Traditional</span></div>
-            </a>
-            <a class="tz-item" href="https://tamil.zone/tamil-name-finder/poovi/">
-              <h3>Poovi</h3>
-              <p>Flower</p>
-              <div class="tz-meta"><span class="tz-pill">Girl</span><span class="tz-pill">Nature</span></div>
-            </a>
-          </div>
-
-          <div style="margin-top: 14px;">
-            <a class="tz-btn tz-btn--primary" href="https://tamil.zone/tamil-name-finder/">Explore all names →</a>
-          </div>
-        </div>
-
-        <aside>
-          <div class="tz-highlight">
-            <div class="tz-h-label">Suggested highlight</div>
-            <div class="tz-h-title">Name of the day</div>
-            <p class="tz-h-desc">Featuring one name daily helps SEO and encourages returning visitors.</p>
-          </div>
-        </aside>
-      </div>
-    </div>
-  </section>
-
-  <hr class="tz-divider" />
-
-  <!-- SECTION: NEWS (with preview cards) -->
-  <section class="tz-section" aria-labelledby="tz-news-h2">
-    <div class="tz-container">
-      <div class="tz-section-grid">
-        <div class="tz-section-main">
-          <div class="tz-badge">📰 <strong>News</strong></div>
-          <h2 id="tz-news-h2">Tamil news — clean, readable, and fast</h2>
-          <p class="tz-muted" style="margin: 0 0 12px;">A curated feed with optional translations, built for quick scanning and deep reading.</p>
-
-          <div class="tz-chip-row" style="margin: 0 0 14px;">
-            <span class="tz-chip">📌 Featured posts</span>
-            <span class="tz-chip">🖼️ Auto images</span>
-            <span class="tz-chip">🔁 Fresh updates</span>
-          </div>
-
-          <!-- Preview cards (placeholders) -->
-          <div class="tz-news-grid" aria-label="Latest news previews">
-            <a class="tz-news" href="https://tamil.zone/news/" aria-label="News preview 1 (placeholder)">
-              <div class="tz-news-thumb" aria-hidden="true">
-                <img loading="lazy" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='640' height='360'%3E%3Crect width='100%25' height='100%25' fill='%23f2f2f6'/%3E%3C/svg%3E" alt="" />
-              </div>
-              <div class="tz-news-body">
-                <div class="tz-news-cat">Tech</div>
-                <div class="tz-news-title">Example headline for a featured story</div>
-                <div class="tz-news-desc">Short teaser text to show the reading experience…</div>
-              </div>
-            </a>
-
-            <a class="tz-news" href="https://tamil.zone/news/" aria-label="News preview 2 (placeholder)">
-              <div class="tz-news-thumb" aria-hidden="true">
-                <img loading="lazy" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='640' height='360'%3E%3Crect width='100%25' height='100%25' fill='%23f2f2f6'/%3E%3C/svg%3E" alt="" />
-              </div>
-              <div class="tz-news-body">
-                <div class="tz-news-cat">Finance</div>
-                <div class="tz-news-title">Example headline for a second story</div>
-                <div class="tz-news-desc">Another short teaser, kept consistent for layout…</div>
-              </div>
-            </a>
-
-            <a class="tz-news" href="https://tamil.zone/news/" aria-label="News preview 3 (placeholder)">
-              <div class="tz-news-thumb" aria-hidden="true">
-                <img loading="lazy" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='640' height='360'%3E%3Crect width='100%25' height='100%25' fill='%23f2f2f6'/%3E%3C/svg%3E" alt="" />
-              </div>
-              <div class="tz-news-body">
-                <div class="tz-news-cat">Sports</div>
-                <div class="tz-news-title">Example headline for a third story</div>
-                <div class="tz-news-desc">Teaser text stays short so the cards align nicely.</div>
-              </div>
-            </a>
-          </div>
-
-          <div style="margin-top: 14px;">
-            <a class="tz-btn tz-btn--primary" href="https://tamil.zone/news/">Go to News →</a>
-          </div>
-        </div>
-
-        <aside>
-          <div class="tz-highlight">
-            <div class="tz-h-label">Suggested highlight</div>
-            <div class="tz-h-title">Today’s top categories</div>
-            <p class="tz-h-desc">Feature 4–6 categories on the News page (Tech, Finance, Sports…) so readers find content instantly.</p>
-          </div>
-        </aside>
-      </div>
-    </div>
-  </section>
-
-  <hr class="tz-divider" />
-
-  <!-- SECTION: BAMINI (kept after News, as agreed) -->
-  <section class="tz-section" aria-labelledby="tz-bamini-h2">
-    <div class="tz-container">
-      <div class="tz-section-grid">
-        <div class="tz-section-main">
-          <div class="tz-badge">🔤 <strong>Bamini Converter</strong></div>
-          <h2 id="tz-bamini-h2">Convert Bamini ↔ Unicode instantly</h2>
-          <p class="tz-muted" style="margin: 0 0 12px;">Reliable output, copy-ready formatting, and fast performance for real documents.</p>
-
-          <div class="tz-chip-row" style="margin: 0 0 14px;">
-            <span class="tz-chip">⚡ Instant</span>
-            <span class="tz-chip">📋 Copy-ready</span>
-            <span class="tz-chip">🔁 Two-way</span>
-          </div>
-
-          <ul>
-            <li>Two-way conversion</li>
-            <li>Copy &amp; download-friendly output</li>
-            <li>Built for real-world documents</li>
-          </ul>
-
-          <a class="tz-btn tz-btn--primary" href="https://tamil.zone/tamil-bamini/">Open Converter →</a>
-        </div>
-
-        <aside>
-          <div class="tz-highlight">
-            <div class="tz-h-label">Suggested highlight</div>
-            <div class="tz-h-title">Paste • Convert • Done</div>
-            <p class="tz-h-desc">Later you can add a tiny screenshot or mini demo preview for even more trust.</p>
-          </div>
-        </aside>
-      </div>
-    </div>
-  </section>
-
-  <hr class="tz-divider" />
-
-  <!-- SECTION: MORE TOOLS (Typing last, as agreed) -->
-  <section class="tz-section" aria-labelledby="tz-tools-h2">
-    <div class="tz-container">
-      <div class="tz-section-grid">
-        <div class="tz-section-main">
-          <div class="tz-badge">🧰 <strong>More Tools</strong></div>
-          <h2 id="tz-tools-h2">A growing Tamil toolkit</h2>
-          <p class="tz-muted" style="margin: 0 0 12px;">From typing helpers to language utilities — Tamil.Zone is built to keep expanding.</p>
-
-          <div class="tz-chip-row" style="margin: 0 0 14px;">
-            <span class="tz-chip">⌨️ Typing</span>
-            <span class="tz-chip">🧩 Utilities</span>
-            <span class="tz-chip">🧠 Smart features</span>
-          </div>
-
-          <ul>
-            <li>Typing helpers</li>
-            <li>Converters &amp; utilities</li>
-            <li>New tools added regularly</li>
-          </ul>
-
-          <a class="tz-btn tz-btn--primary" href="https://tamil.zone/tamil-typing/">Browse Tools →</a>
-        </div>
-
-        <aside>
-          <div class="tz-highlight">
-            <div class="tz-h-label">Suggested highlight</div>
-            <div class="tz-h-title">What’s next?</div>
-            <p class="tz-h-desc">Use this space for “Coming soon” tools or a simple newsletter signup prompt.</p>
-          </div>
-        </aside>
-      </div>
-    </div>
-  </section>
-
-  <!-- Bottom CTA band (SEO: internal links, correct order) -->
-  <section class="tz-bottom" aria-label="Quick links">
-    <div class="tz-container">
-      <div class="tz-bottom-band">
-        <div>
-          <div class="tz-bottom-title">Start exploring Tamil.Zone</div>
-          <div class="tz-bottom-sub">Pick a tool and jump in — Baby Names, News, Bamini, and more.</div>
-        </div>
-        <div class="tz-bottom-links">
-          <a class="tz-pillbtn tz-pillbtn--primary" href="https://tamil.zone/tamil-name-finder/">Baby Names</a>
-          <a class="tz-pillbtn tz-pillbtn--ghost" href="https://tamil.zone/news/">News</a>
-          <a class="tz-pillbtn tz-pillbtn--ghost" href="https://tamil.zone/tamil-bamini/">Bamini</a>
-          <a class="tz-pillbtn tz-pillbtn--ghost" href="https://tamil.zone/tamil-typing/">Typing</a>
-        </div>
-      </div>
-    </div>
-  </section>
-
-</div>
-<!-- ===== End Tamil.Zone Homepage (Mockup Match) ===== -->
