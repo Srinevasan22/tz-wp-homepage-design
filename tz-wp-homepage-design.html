@@ -45,19 +45,74 @@ Notes:
           <h2 class="tz-card-title" id="tz-card-names-title">Search Baby Names</h2>
           <p class="tz-card-sub">Find names by meaning, origin, style, and more — with a clean browsing experience.</p>
 
-          <div class="tz-card-inline">
-            <p class="tz-mini">
-              <strong>Name of the day:</strong>
-              <span class="tz-ital">Aadhira</span>
-              <span class="tz-muted">(Moonlight)</span>
-            </p>
-          </div>
+          <!-- Embedded: Find Tamil Baby Names (moved into hero card) -->
+          <div class="tz-embed-find-names" aria-label="Find Tamil baby names module">
+            <div class="tz-embed-grid">
+              <!-- LEFT: quick picks + filters -->
+              <div class="tz-embed-left">
+                <div class="tz-embed-kicker">Find Tamil Baby Names</div>
+                <div class="tz-embed-sub">
+                  Discover names by meaning, origin, gender, and style — quickly.
+                </div>
 
-          <div class="tz-chip-row" aria-label="Example names">
-            <a class="tz-chip" href="/tamil-name-finder/rithan/">Rithan</a>
-            <a class="tz-chip" href="/tamil-name-finder/anaya/">Anaya</a>
-            <a class="tz-chip" href="/tamil-name-finder/viran/">Viran</a>
-            <a class="tz-chip tz-chip-soft" href="/tamil-name-finder/?sort=popular">Popular</a>
+                <div class="tz-embed-filters" aria-label="Quick filters">
+                  <a class="tz-chip" href="/tamil-name-finder/?filter=meaning">By meaning</a>
+                  <a class="tz-chip" href="/tamil-name-finder/?filter=girl">Girls</a>
+                  <a class="tz-chip" href="/tamil-name-finder/?filter=boy">Boys</a>
+                  <a class="tz-chip" href="/tamil-name-finder/?filter=origin">Tamil origin</a>
+                  <a class="tz-chip" href="/tamil-name-finder/?filter=popular">Popular</a>
+                </div>
+
+                <div class="tz-embed-picks" aria-label="Quick name picks">
+                  <a class="tz-pick" href="/tamil-name-finder/nila/">
+                    <span class="tz-pick-name">Nila</span>
+                    <span class="tz-pick-meaning">Moon / glow</span>
+                  </a>
+
+                  <a class="tz-pick" href="/tamil-name-finder/isai/">
+                    <span class="tz-pick-name">Isai</span>
+                    <span class="tz-pick-meaning">Music</span>
+                  </a>
+
+                  <a class="tz-pick" href="/tamil-name-finder/kavin/">
+                    <span class="tz-pick-name">Kavin</span>
+                    <span class="tz-pick-meaning">Handsome / poetic</span>
+                  </a>
+
+                  <a class="tz-pick" href="/tamil-name-finder/iniya/">
+                    <span class="tz-pick-name">Iniya</span>
+                    <span class="tz-pick-meaning">Sweet / pleasant</span>
+                  </a>
+                </div>
+
+                <div class="tz-embed-actions">
+                  <a class="tz-btn tz-btn-primary" href="/tamil-name-finder/">
+                    Explore all names →
+                  </a>
+                  <a class="tz-link" href="/tamil-name-finder/?browse=meaning">
+                    Browse by meaning →
+                  </a>
+                </div>
+              </div>
+
+              <!-- RIGHT: Name of the day -->
+              <aside class="tz-embed-right" aria-label="Name of the day">
+                <div class="tz-notd">
+                  <div class="tz-notd-label">NAME OF THE DAY</div>
+                  <div class="tz-notd-name">Aadhira</div>
+                  <div class="tz-notd-meta">(Moonlight)</div>
+
+                  <div class="tz-notd-rows">
+                    <div class="tz-notd-row"><span>Gender</span><strong>Female</strong></div>
+                    <div class="tz-notd-row"><span>Theme</span><strong>Nature</strong></div>
+                  </div>
+
+                  <a class="tz-btn tz-btn-ghost" href="/tamil-name-finder/aadhira/">
+                    View name page
+                  </a>
+                </div>
+              </aside>
+            </div>
           </div>
 
           <div class="tz-card-actions tz-card__cta">
@@ -107,57 +162,6 @@ Notes:
       </div>
     </div>
   </header>
-
-  <!-- Baby Names section -->
-  <section class="tz-section" aria-label="Tamil baby names">
-    <div class="tz-section-head">
-      <h2 class="tz-h2">Find Tamil Baby Names</h2>
-      <p class="tz-subhead">Discover names by meaning, origin, and more.</p>
-    </div>
-
-    <div class="tz-two-col">
-      <div class="tz-grid-cards" aria-label="Example baby names">
-        <article class="tz-mini-card" aria-label="Kritthik name card">
-          <h3 class="tz-mini-title"><a href="/tamil-name-finder/krithik/">Krithik</a></h3>
-          <p class="tz-mini-desc">Strong, classic feel.</p>
-        </article>
-        <article class="tz-mini-card" aria-label="Celina name card">
-          <h3 class="tz-mini-title"><a href="/tamil-name-finder/celina/">Celina</a></h3>
-          <p class="tz-mini-desc">Modern, soft sound.</p>
-        </article>
-        <article class="tz-mini-card" aria-label="Elan name card">
-          <h3 class="tz-mini-title"><a href="/tamil-name-finder/elan/">Elan</a></h3>
-          <p class="tz-mini-desc">Elegant, minimal.</p>
-        </article>
-        <article class="tz-mini-card" aria-label="Aarushi name card">
-          <h3 class="tz-mini-title"><a href="/tamil-name-finder/aarushi/">Aarushi</a></h3>
-          <p class="tz-mini-desc">Bright, modern.</p>
-        </article>
-
-        <div class="tz-filter-row" aria-label="Quick filters">
-          <a class="tz-pill" href="/tamil-name-finder/?filter=meaning">By meaning</a>
-          <a class="tz-pill" href="/tamil-name-finder/?gender=female">Girls</a>
-          <a class="tz-pill" href="/tamil-name-finder/?gender=male">Boys</a>
-          <a class="tz-pill" href="/tamil-name-finder/?origin=tamil">Tamil origin</a>
-          <a class="tz-pill" href="/tamil-name-finder/?sort=popular">Popular</a>
-        </div>
-      </div>
-
-      <aside class="tz-card tz-card-nod" aria-label="Name of the day">
-        <div class="tz-card-media tz-card-media-soft" aria-hidden="true"></div>
-        <div class="tz-card-body">
-          <p class="tz-eyebrow tz-eyebrow-card">Name of the day</p>
-          <h3 class="tz-card-title">Aadhira</h3>
-          <p class="tz-muted">(Moonlight)</p>
-          <dl class="tz-dl">
-            <div><dt>Gender</dt><dd>Female</dd></div>
-            <div><dt>Theme</dt><dd>Nature</dd></div>
-          </dl>
-          <a class="tz-btn tz-btn-primary tz-btn-wide" href="/tamil-name-finder/aadhira/" aria-label="View name of the day page">View name page</a>
-        </div>
-      </aside>
-    </div>
-  </section>
 
   <!-- News section -->
   <section class="tz-section" aria-label="Latest Tamil news">
@@ -610,6 +614,140 @@ Notes:
   .tz-card-actions { display: flex; flex-wrap: wrap; gap: 10px; align-items: center; }
   .tz-card__cta { margin-top: auto; padding-top: 12px; }
 
+  /* Embedded Find Names module (inside the hero baby-name card) */
+  .tz-embed-find-names {
+    margin-top: 14px;
+    padding-top: 14px;
+    border-top: 1px solid rgba(0,0,0,.06);
+    font-family: var(--wpi--font-general);
+    font-size: var(--wpi--font-size-general);
+  }
+
+  .tz-embed-grid {
+    display: grid;
+    grid-template-columns: 1.4fr 0.9fr;
+    gap: 14px;
+    align-items: stretch;
+  }
+
+  .tz-embed-kicker {
+    font-family: var(--wpi--font-heading);
+    font-weight: var(--wpi--font-heading-weight);
+    font-size: var(--wpi--font-size-small);
+    margin-bottom: 6px;
+  }
+
+  .tz-embed-sub {
+    color: rgba(0,0,0,.65);
+    line-height: 1.6;
+    margin-bottom: 10px;
+  }
+
+  .tz-embed-filters {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-bottom: 10px;
+  }
+
+  .tz-embed-filters .tz-chip {
+    text-decoration: none;
+    border: 1px solid rgba(0,0,0,.08);
+    background: rgba(0,0,0,.02);
+    color: rgba(0,0,0,.75);
+    padding: 7px 10px;
+    border-radius: 999px;
+    line-height: 1;
+    height: auto;
+    font-weight: 600;
+  }
+
+  .tz-embed-picks {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 10px;
+    margin-bottom: 12px;
+  }
+
+  .tz-pick {
+    display: block;
+    text-decoration: none;
+    border: 1px solid rgba(0,0,0,.08);
+    background: #fff;
+    border-radius: 12px;
+    padding: 10px 10px;
+  }
+
+  .tz-pick-name {
+    display: block;
+    font-family: var(--wpi--font-heading);
+    font-weight: 600;
+    color: rgba(0,0,0,.85);
+    margin-bottom: 2px;
+  }
+
+  .tz-pick-meaning {
+    display: block;
+    font-size: var(--wpi--font-size-x-small);
+    color: rgba(0,0,0,.60);
+  }
+
+  .tz-embed-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    align-items: center;
+  }
+
+  .tz-embed-actions .tz-link {
+    color: inherit;
+  }
+
+  /* Name-of-the-day compact card */
+  .tz-notd {
+    border: 1px solid rgba(0,0,0,.08);
+    background: #fff;
+    border-radius: 14px;
+    padding: 14px;
+    height: 100%;
+  }
+
+  .tz-notd-label {
+    font-size: var(--wpi--font-size-x-small);
+    letter-spacing: 0.08em;
+    color: rgba(0,0,0,.55);
+    margin-bottom: 6px;
+  }
+
+  .tz-notd-name {
+    font-family: var(--wpi--font-heading);
+    font-size: var(--wpi--font-size-medium);
+    margin-bottom: 2px;
+  }
+
+  .tz-notd-meta {
+    color: rgba(0,0,0,.60);
+    margin-bottom: 10px;
+  }
+
+  .tz-notd-rows {
+    display: grid;
+    gap: 8px;
+    margin-bottom: 12px;
+  }
+
+  .tz-notd-row {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+    font-size: var(--wpi--font-size-general);
+    color: rgba(0,0,0,.70);
+  }
+
+  .tz-notd-row strong {
+    color: rgba(0,0,0,.85);
+  }
+
   /* Sections */
   .tz-section { padding-top: 28px; padding-bottom: 8px; }
   .tz-section-head { margin-bottom: 14px; }
@@ -845,6 +983,9 @@ Notes:
   }
 
   @media (max-width: 980px) {
+    .tz-embed-grid { grid-template-columns: 1fr; }
+    .tz-embed-picks { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+
     .tz-home .tz-card__media img,
     .tz-home .tz-card--feature .tz-card__media img {
       height: 22rem;
