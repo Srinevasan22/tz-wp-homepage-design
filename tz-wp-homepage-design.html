@@ -124,24 +124,21 @@ Notes:
 
               <!-- Right: Name of the day -->
               <aside class="tz-notd" aria-label="Name of the day">
-                <div class="tz-notd-top">
+                <div class="tz-nod" id="tzNodCard" aria-live="polite">
                   <div class="tz-notd-kicker">NAME OF THE DAY</div>
-                  <div class="tz-notd-name" data-notd-name>Aadhira</div>
-                  <div class="tz-notd-meaning" data-notd-meaning>(Moonlight)</div>
+
+                  <div class="tz-notd-name" id="tzNodTitle">Loading…</div>
+                  <div class="tz-notd-meaning" id="tzNodMeaning"></div>
+
+                  <dl class="tz-notd-dl">
+                    <div class="tz-notd-row">
+                      <dt>Gender</dt>
+                      <dd id="tzNodGender">—</dd>
+                    </div>
+                  </dl>
+
+                  <a class="tz-btn tz-btn-ghost tz-notd-btn" id="tzNodLink" href="#" style="pointer-events:none;opacity:.6;">View name page</a>
                 </div>
-
-                <dl class="tz-notd-dl">
-                  <div class="tz-notd-row">
-                    <dt>Gender</dt>
-                    <dd data-notd-gender>Female</dd>
-                  </div>
-                  <div class="tz-notd-row">
-                    <dt>Theme</dt>
-                    <dd data-notd-theme>Nature</dd>
-                  </div>
-                </dl>
-
-                <a class="tz-btn tz-btn-ghost tz-notd-btn" data-notd-link href="/tamil-name-finder/aadhira/">View name page</a>
               </aside>
             </div>
           </div>
@@ -1150,41 +1147,34 @@ Notes:
   });
 
   // --------------------------------
-  // 2) Name of the Day (changes daily)
+  // 2) Name of the Day (from REST, changes daily)
   // --------------------------------
-  const pool = [
-    { name: "Aadhira", meaning: "Moonlight", gender: "Female", theme: "Nature", url: "/tamil-name-finder/aadhira/" },
-    { name: "Isai",    meaning: "Music",     gender: "Unisex", theme: "Arts",   url: "/tamil-name-finder/isai/" },
-    { name: "Nila",    meaning: "Moon",      gender: "Female", theme: "Nature", url: "/tamil-name-finder/nila/" },
-    { name: "Kavin",   meaning: "Poetic",    gender: "Male",   theme: "Classic",url: "/tamil-name-finder/kavin/" },
-    { name: "Iniya",   meaning: "Sweet",     gender: "Female", theme: "Modern", url: "/tamil-name-finder/iniya/" }
-  ];
+  (async function () {
+    try {
+      const today = new Date().toISOString().slice(0, 10);
+      const res = await fetch(`/wp-json/tz-name-pages/v1/homecard?d=${today}`, {
+        credentials: "same-origin"
+      });
+      const data = await res.json();
+      if (!data || !data.ok || !data.nameOfDay) return;
 
-  function dayKeyLocal() {
-    const d = new Date();
-    return `${d.getFullYear()}-${String(d.getMonth()+1).padStart(2,"0")}-${String(d.getDate()).padStart(2,"0")}`;
-  }
+      const notd = data.nameOfDay;
+      const elName = root.querySelector("#tzNodTitle");
+      const elMean = root.querySelector("#tzNodMeaning");
+      const elGender = root.querySelector("#tzNodGender");
+      const elLink = root.querySelector("#tzNodLink");
 
-  function pickForToday() {
-    const key = dayKeyLocal();
-    let h = 0;
-    for (let i = 0; i < key.length; i++) h = (h * 31 + key.charCodeAt(i)) >>> 0;
-    return pool[h % pool.length];
-  }
-
-  const notd = pickForToday();
-  const elName = root.querySelector("[data-notd-name]");
-  const elMean = root.querySelector("[data-notd-meaning]");
-  const elGender = root.querySelector("[data-notd-gender]");
-  const elTheme = root.querySelector("[data-notd-theme]");
-  const elLink = root.querySelector("[data-notd-link]");
-
-  if (notd) {
-    if (elName) elName.textContent = notd.name;
-    if (elMean) elMean.textContent = `(${notd.meaning})`;
-    if (elGender) elGender.textContent = notd.gender;
-    if (elTheme) elTheme.textContent = notd.theme;
-    if (elLink) elLink.href = notd.url;
-  }
+      if (elName) elName.textContent = notd.title || "—";
+      if (elMean) elMean.textContent = notd.meaning ? notd.meaning : "";
+      if (elGender) elGender.textContent = notd.gender || "—";
+      if (elLink && notd.url) {
+        elLink.href = notd.url;
+        elLink.style.pointerEvents = "";
+        elLink.style.opacity = "1";
+      }
+    } catch (e) {
+      // Fail silently.
+    }
+  })();
 })();
 </script>
