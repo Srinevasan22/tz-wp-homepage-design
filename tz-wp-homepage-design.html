@@ -10,6 +10,7 @@ Goals:
 Notes:
 - Replace the placeholder image URLs (data-bg) with real media URLs (or keep gradients).
 - Replace the placeholder links with your real paths.
+- Add data-names-homecard-endpoint to enable the “Name of the Day” REST fetch.
 -->
 
 <section class="tz-home" aria-label="Tamil.Zone homepage">
@@ -51,6 +52,7 @@ Notes:
             data-names-search-page="/tamil-name-finder/"
             data-names-post-type="tamil_name"
             data-names-rest-base="tamil_name"
+            data-names-homecard-endpoint=""
           >
             <!-- Search -->
             <form class="tz-names-search" action="/tamil-name-finder/" method="get" role="search" aria-label="Search Tamil baby names">
@@ -198,7 +200,7 @@ Notes:
       <div class="tz-news-grid" aria-label="Latest news highlights">
         <article class="tz-story" aria-label="News story 1">
           <a class="tz-story-media" href="/news/" aria-label="Open Tamil news">
-            <span class="tz-story-img" data-bg="/wp-content/uploads/2026/01/tz-news-1.jpg" aria-hidden="true"></span>
+            <span class="tz-story-img tz-story-img--one" aria-hidden="true"></span>
           </a>
           <div class="tz-story-body">
             <h3 class="tz-story-title"><a href="/news/">Kollywood Star Bags Best Actor Award</a></h3>
@@ -208,7 +210,7 @@ Notes:
 
         <article class="tz-story" aria-label="News story 2">
           <a class="tz-story-media" href="/news/" aria-label="Open Tamil news">
-            <span class="tz-story-img" data-bg="/wp-content/uploads/2026/01/tz-news-2.jpg" aria-hidden="true"></span>
+            <span class="tz-story-img tz-story-img--two" aria-hidden="true"></span>
           </a>
           <div class="tz-story-body">
             <h3 class="tz-story-title"><a href="/news/">Tips for a Healthy Pongal Feast</a></h3>
@@ -218,7 +220,7 @@ Notes:
 
         <article class="tz-story" aria-label="News story 3">
           <a class="tz-story-media" href="/news/" aria-label="Open Tamil news">
-            <span class="tz-story-img" data-bg="/wp-content/uploads/2026/01/tz-news-3.jpg" aria-hidden="true"></span>
+            <span class="tz-story-img tz-story-img--three" aria-hidden="true"></span>
           </a>
           <div class="tz-story-body">
             <h3 class="tz-story-title"><a href="/news/">India Defeat South Africa in Thrilling Match</a></h3>
@@ -904,6 +906,21 @@ Notes:
       linear-gradient(135deg, rgba(111,60,255,.22), rgba(111,60,255,.10));
     position: relative;
   }
+  .tz-story-img--one {
+    background:
+      radial-gradient(700px 180px at 15% 25%, rgba(255,255,255,.38), rgba(255,255,255,0) 55%),
+      linear-gradient(135deg, rgba(44,94,255,.32), rgba(96,62,255,.12));
+  }
+  .tz-story-img--two {
+    background:
+      radial-gradient(700px 180px at 20% 30%, rgba(255,255,255,.35), rgba(255,255,255,0) 55%),
+      linear-gradient(135deg, rgba(255,132,50,.24), rgba(255,210,120,.14));
+  }
+  .tz-story-img--three {
+    background:
+      radial-gradient(700px 180px at 18% 28%, rgba(255,255,255,.32), rgba(255,255,255,0) 55%),
+      linear-gradient(135deg, rgba(20,160,130,.26), rgba(110,230,200,.12));
+  }
   .tz-story-body { padding: 10px 12px 12px; }
   .tz-story-title { margin: 0 0 6px; font-size: 1.45rem; font-weight: 900; }
   .tz-story-title a { text-decoration: none; }
@@ -1151,10 +1168,16 @@ Notes:
   // --------------------------------
   (async function () {
     try {
+      const homecardEndpoint = root.dataset.namesHomecardEndpoint;
+      if (!homecardEndpoint) return;
       const today = new Date().toISOString().slice(0, 10);
-      const res = await fetch(`/wp-json/tz-name-pages/v1/homecard?d=${today}`, {
+      const endpoint = homecardEndpoint.includes("?")
+        ? `${homecardEndpoint}&d=${today}`
+        : `${homecardEndpoint}?d=${today}`;
+      const res = await fetch(endpoint, {
         credentials: "same-origin"
       });
+      if (!res.ok) return;
       const data = await res.json();
       if (!data || !data.ok || !data.nameOfDay) return;
 
