@@ -46,71 +46,103 @@ Notes:
           <p class="tz-card-sub">Find names by meaning, origin, style, and more — with a clean browsing experience.</p>
 
           <!-- Embedded: Find Tamil Baby Names (moved into hero card) -->
-          <div class="tz-embed-find-names" aria-label="Find Tamil baby names module">
-            <div class="tz-embed-grid">
-              <!-- LEFT: quick picks + filters -->
-              <div class="tz-embed-left">
-                <div class="tz-embed-kicker">Find Tamil Baby Names</div>
-                <div class="tz-embed-sub">
-                  Discover names by meaning, origin, gender, and style — quickly.
-                </div>
+          <div
+            class="tz-names-module"
+            data-names-search-page="/tamil-name-finder/"
+            data-names-post-type="tamil_name"
+            data-names-rest-base="tamil_name"
+          >
+            <!-- Search -->
+            <form class="tz-names-search" action="/tamil-name-finder/" method="get" role="search" aria-label="Search Tamil baby names">
+              <label class="tz-sr-only" for="tzNameSearch">Search for a baby name</label>
+              <div class="tz-names-search-row">
+                <input
+                  id="tzNameSearch"
+                  class="tz-names-input"
+                  name="q"
+                  type="search"
+                  inputmode="search"
+                  placeholder="Search a name (e.g., Aadhira, Isai, Nila)"
+                  autocomplete="off"
+                  aria-autocomplete="list"
+                  aria-describedby="tzNameSearchHelp"
+                />
+                <button class="tz-btn tz-btn-primary tz-names-search-btn" type="submit">Search</button>
+              </div>
+              <div id="tzNameSearchHelp" class="tz-help">
+                Tip: start typing to see suggestions.
+              </div>
 
-                <div class="tz-embed-filters" aria-label="Quick filters">
-                  <a class="tz-chip" href="/tamil-name-finder/?filter=meaning">By meaning</a>
-                  <a class="tz-chip" href="/tamil-name-finder/?filter=girl">Girls</a>
-                  <a class="tz-chip" href="/tamil-name-finder/?filter=boy">Boys</a>
-                  <a class="tz-chip" href="/tamil-name-finder/?filter=origin">Tamil origin</a>
-                  <a class="tz-chip" href="/tamil-name-finder/?filter=popular">Popular</a>
-                </div>
+              <!-- Suggestions -->
+              <div class="tz-suggest" aria-live="polite" aria-label="Search suggestions" hidden>
+                <div class="tz-suggest-list" role="listbox"></div>
+              </div>
+            </form>
 
-                <div class="tz-embed-picks" aria-label="Quick name picks">
+            <!-- Quick chips (no duplicates) -->
+            <div class="tz-names-chips" aria-label="Browse shortcuts">
+              <a class="tz-chip" href="/tamil-name-finder/?filter=meaning">Meaning</a>
+              <a class="tz-chip" href="/tamil-name-finder/?filter=style-modern">Style · Modern</a>
+              <a class="tz-chip" href="/tamil-name-finder/?filter=girl">Girl</a>
+              <a class="tz-chip" href="/tamil-name-finder/?filter=boy">Boy</a>
+              <a class="tz-chip" href="/tamil-name-finder/?filter=origin">Tamil origin</a>
+              <a class="tz-chip" href="/tamil-name-finder/?filter=popular">Popular</a>
+            </div>
+
+            <!-- Picks + Name of the day -->
+            <div class="tz-names-grid">
+              <!-- Left: curated picks -->
+              <div class="tz-names-picks" aria-label="Quick picks">
+                <h3 class="tz-mini-title">Quick picks</h3>
+
+                <div class="tz-picks-row">
                   <a class="tz-pick" href="/tamil-name-finder/nila/">
                     <span class="tz-pick-name">Nila</span>
-                    <span class="tz-pick-meaning">Moon / glow</span>
+                    <span class="tz-pick-meta">Moon · glow</span>
                   </a>
 
                   <a class="tz-pick" href="/tamil-name-finder/isai/">
                     <span class="tz-pick-name">Isai</span>
-                    <span class="tz-pick-meaning">Music</span>
+                    <span class="tz-pick-meta">Music</span>
                   </a>
 
                   <a class="tz-pick" href="/tamil-name-finder/kavin/">
                     <span class="tz-pick-name">Kavin</span>
-                    <span class="tz-pick-meaning">Handsome / poetic</span>
+                    <span class="tz-pick-meta">Handsome · poetic</span>
                   </a>
 
                   <a class="tz-pick" href="/tamil-name-finder/iniya/">
                     <span class="tz-pick-name">Iniya</span>
-                    <span class="tz-pick-meaning">Sweet / pleasant</span>
+                    <span class="tz-pick-meta">Sweet · pleasant</span>
                   </a>
                 </div>
 
-                <div class="tz-embed-actions">
-                  <a class="tz-btn tz-btn-primary" href="/tamil-name-finder/">
-                    Explore Baby Names →
-                  </a>
-                  <a class="tz-link" href="/tamil-name-finder/?browse=meaning">
-                    Browse by meaning →
-                  </a>
+                <div class="tz-picks-actions">
+                  <a class="tz-btn tz-btn-primary" href="/tamil-name-finder/">Browse names</a>
+                  <a class="tz-link" href="/tamil-name-finder/">Browse names →</a>
                 </div>
               </div>
 
-              <!-- RIGHT: Name of the day -->
-              <aside class="tz-embed-right" aria-label="Name of the day">
-                <div class="tz-notd">
-                  <div class="tz-notd-label">NAME OF THE DAY</div>
-                  <div class="tz-notd-name">Aadhira</div>
-                  <div class="tz-notd-meta">(Moonlight)</div>
-
-                  <div class="tz-notd-rows">
-                    <div class="tz-notd-row"><span>Gender</span><strong>Female</strong></div>
-                    <div class="tz-notd-row"><span>Theme</span><strong>Nature</strong></div>
-                  </div>
-
-                  <a class="tz-btn tz-btn-ghost" href="/tamil-name-finder/aadhira/">
-                    View name page
-                  </a>
+              <!-- Right: Name of the day -->
+              <aside class="tz-notd" aria-label="Name of the day">
+                <div class="tz-notd-top">
+                  <div class="tz-notd-kicker">NAME OF THE DAY</div>
+                  <div class="tz-notd-name" data-notd-name>Aadhira</div>
+                  <div class="tz-notd-meaning" data-notd-meaning>(Moonlight)</div>
                 </div>
+
+                <dl class="tz-notd-dl">
+                  <div class="tz-notd-row">
+                    <dt>Gender</dt>
+                    <dd data-notd-gender>Female</dd>
+                  </div>
+                  <div class="tz-notd-row">
+                    <dt>Theme</dt>
+                    <dd data-notd-theme>Nature</dd>
+                  </div>
+                </dl>
+
+                <a class="tz-btn tz-btn-ghost tz-notd-btn" data-notd-link href="/tamil-name-finder/aadhira/">View name page</a>
               </aside>
             </div>
           </div>
@@ -609,139 +641,170 @@ Notes:
 
   .tz-card__cta { margin-top: auto; padding-top: 12px; }
 
-  /* Embedded Find Names module (inside the hero baby-name card) */
-  .tz-embed-find-names {
+  /* ------------------------------
+     Baby Names module (redesign)
+     ------------------------------ */
+
+  .tz-sr-only {
+    position: absolute !important;
+    width: 1px; height: 1px;
+    padding: 0; margin: -1px;
+    overflow: hidden; clip: rect(0, 0, 0, 0);
+    white-space: nowrap; border: 0;
+  }
+
+  .tz-names-module {
     margin-top: 14px;
     padding-top: 14px;
     border-top: 1px solid rgba(0,0,0,.06);
-    font-family: var(--wpi--font-general);
-    font-size: var(--wpi--font-size-general);
+    font-family: var(--wpi--font-general, "Roboto", sans-serif);
+    font-size: var(--wpi--font-size-general, 1.6rem);
   }
 
-  .tz-embed-grid {
-    display: grid;
-    grid-template-columns: 1.4fr 0.9fr;
-    gap: 14px;
+  .tz-names-search { margin-top: 1.2rem; }
+  .tz-names-search-row {
+    display: flex;
+    gap: 1rem;
     align-items: stretch;
   }
 
-  .tz-embed-kicker {
-    font-family: var(--wpi--font-heading);
-    font-weight: var(--wpi--font-heading-weight);
-    font-size: var(--wpi--font-size-small);
-    margin-bottom: 6px;
+  .tz-names-input {
+    flex: 1;
+    border: 1px solid rgba(0,0,0,.10);
+    border-radius: 1.2rem;
+    padding: 1.1rem 1.2rem;
+    font-size: var(--wpi--font-size-general, 1.6rem);
+    outline: none;
   }
 
-  .tz-embed-sub {
-    color: rgba(0,0,0,.65);
-    line-height: 1.6;
-    margin-bottom: 10px;
+  .tz-names-input:focus {
+    border-color: rgba(108, 92, 231, .45);
+    box-shadow: 0 0 0 .35rem rgba(108, 92, 231, .12);
   }
 
-  .tz-embed-filters {
+  .tz-names-search-btn { border-radius: 1.2rem; }
+
+  .tz-help {
+    margin-top: .6rem;
+    font-size: var(--wpi--font-size-x-small, 1.4rem);
+    opacity: .7;
+  }
+
+  .tz-suggest {
+    margin-top: .8rem;
+    border: 1px solid rgba(0,0,0,.08);
+    border-radius: 1.2rem;
+    background: #fff;
+    overflow: hidden;
+  }
+
+  .tz-suggest-list { display: grid; }
+  .tz-suggest-item {
+    display: flex;
+    justify-content: space-between;
+    gap: 1rem;
+    padding: .9rem 1.1rem;
+    cursor: pointer;
+    text-decoration: none;
+    color: inherit;
+  }
+  .tz-suggest-item:hover { background: rgba(0,0,0,.035); }
+  .tz-suggest-title { font-weight: 600; }
+  .tz-suggest-meta { opacity: .65; font-size: var(--wpi--font-size-x-small, 1.4rem); }
+
+  .tz-names-chips {
     display: flex;
     flex-wrap: wrap;
-    gap: 8px;
-    margin-bottom: 10px;
+    gap: .8rem;
+    margin: 1.2rem 0 1.2rem;
   }
 
-  .tz-embed-filters .tz-chip {
-    text-decoration: none;
-    border: 1px solid rgba(0,0,0,.08);
-    background: rgba(0,0,0,.02);
-    color: rgba(0,0,0,.75);
-    padding: 7px 10px;
-    border-radius: 999px;
-    line-height: 1;
-    height: auto;
-    font-weight: 600;
-  }
-
-  .tz-embed-picks {
+  .tz-names-grid {
     display: grid;
-    grid-template-columns: repeat(4, minmax(0, 1fr));
-    gap: 10px;
-    margin-bottom: 12px;
+    grid-template-columns: 1.6fr 1fr;
+    gap: 1.4rem;
+    align-items: start;
+  }
+
+  .tz-mini-title {
+    font-family: var(--wpi--font-heading, "Roboto", sans-serif);
+    font-weight: var(--wpi--font-heading-weight, 400);
+    font-size: var(--wpi--font-size-small, 2rem);
+    margin: 0 0 .9rem;
+  }
+
+  .tz-picks-row {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 1rem;
   }
 
   .tz-pick {
     display: block;
-    text-decoration: none;
     border: 1px solid rgba(0,0,0,.08);
+    border-radius: 1.2rem;
+    padding: 1rem;
+    text-decoration: none;
+    color: inherit;
     background: #fff;
-    border-radius: 12px;
-    padding: 10px 10px;
   }
+
+  .tz-pick:hover { border-color: rgba(108, 92, 231, .25); }
 
   .tz-pick-name {
     display: block;
-    font-family: var(--wpi--font-heading);
-    font-weight: 600;
-    color: rgba(0,0,0,.85);
-    margin-bottom: 2px;
+    font-weight: 700;
+    margin-bottom: .2rem;
   }
 
-  .tz-pick-meaning {
+  .tz-pick-meta {
     display: block;
-    font-size: var(--wpi--font-size-x-small);
-    color: rgba(0,0,0,.60);
+    opacity: .75;
+    font-size: var(--wpi--font-size-x-small, 1.4rem);
   }
 
-  .tz-embed-actions {
+  .tz-picks-actions {
     display: flex;
-    flex-wrap: wrap;
-    gap: 10px;
+    gap: 1.2rem;
     align-items: center;
+    margin-top: 1.2rem;
   }
 
-  .tz-embed-actions .tz-link {
-    color: inherit;
-  }
-
-  /* Name-of-the-day compact card */
   .tz-notd {
     border: 1px solid rgba(0,0,0,.08);
+    border-radius: 1.6rem;
+    padding: 1.4rem;
     background: #fff;
-    border-radius: 14px;
-    padding: 14px;
-    height: 100%;
   }
 
-  .tz-notd-label {
-    font-size: var(--wpi--font-size-x-small);
-    letter-spacing: 0.08em;
-    color: rgba(0,0,0,.55);
-    margin-bottom: 6px;
+  .tz-notd-kicker {
+    font-size: var(--wpi--font-size-x-small, 1.4rem);
+    letter-spacing: .08em;
+    opacity: .65;
   }
 
   .tz-notd-name {
-    font-family: var(--wpi--font-heading);
-    font-size: var(--wpi--font-size-medium);
-    margin-bottom: 2px;
+    font-family: var(--wpi--font-heading, "Roboto", sans-serif);
+    font-weight: 700;
+    font-size: var(--wpi--font-size-medium, 2.4rem);
+    margin-top: .4rem;
   }
 
-  .tz-notd-meta {
-    color: rgba(0,0,0,.60);
-    margin-bottom: 10px;
-  }
+  .tz-notd-meaning { opacity: .75; margin-top: .2rem; }
 
-  .tz-notd-rows {
+  .tz-notd-dl {
+    margin: 1.1rem 0 1.2rem;
     display: grid;
-    gap: 8px;
-    margin-bottom: 12px;
+    gap: .8rem;
   }
-
   .tz-notd-row {
     display: flex;
     justify-content: space-between;
-    gap: 10px;
-    font-size: var(--wpi--font-size-general);
-    color: rgba(0,0,0,.70);
+    gap: 1rem;
   }
-
-  .tz-notd-row strong {
-    color: rgba(0,0,0,.85);
-  }
+  .tz-notd-row dt { opacity: .75; }
+  .tz-notd-row dd { margin: 0; font-weight: 600; }
+  .tz-notd-btn { width: 100%; border-radius: 1.2rem; }
 
   /* Sections */
   .tz-section { padding-top: 28px; padding-bottom: 8px; }
@@ -978,8 +1041,8 @@ Notes:
   }
 
   @media (max-width: 980px) {
-    .tz-embed-grid { grid-template-columns: 1fr; }
-    .tz-embed-picks { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    .tz-names-grid { grid-template-columns: 1fr; }
+    .tz-names-search-row { flex-direction: column; }
 
     .tz-home .tz-card__media img,
     .tz-home .tz-card--feature .tz-card__media img {
@@ -1011,4 +1074,117 @@ Notes:
       });
     } catch(e) {}
   })();
+</script>
+
+<script>
+(function () {
+  const root = document.querySelector(".tz-names-module");
+  if (!root) return;
+
+  const SEARCH_PAGE = root.dataset.namesSearchPage || "/tamil-name-finder/";
+  const POST_TYPE = root.dataset.namesPostType || "tamil_name";
+  const REST_BASE = root.dataset.namesRestBase || "tamil_name";
+  const REST_URL = `${location.origin}/wp-json/wp/v2/${encodeURIComponent(REST_BASE)}`;
+
+  // ----------------------------
+  // 1) Search: suggest + redirect
+  // ----------------------------
+  const input = root.querySelector("#tzNameSearch");
+  const suggestWrap = root.querySelector(".tz-suggest");
+  const suggestList = root.querySelector(".tz-suggest-list");
+
+  let t = null;
+  let lastQ = "";
+
+  function hideSuggest() {
+    if (!suggestWrap) return;
+    suggestWrap.hidden = true;
+    suggestList.innerHTML = "";
+  }
+
+  function showSuggest(items) {
+    if (!suggestWrap) return;
+    suggestList.innerHTML = items.map(item => {
+      const link = item.link || (SEARCH_PAGE.replace(/\/$/, "") + "/" + item.slug + "/");
+      const title = (item.title && item.title.rendered) ? item.title.rendered : (item.title || item.slug);
+      return `
+        <a class="tz-suggest-item" role="option" href="${link}">
+          <span class="tz-suggest-title">${title}</span>
+          <span class="tz-suggest-meta">${item.slug || ""}</span>
+        </a>
+      `;
+    }).join("");
+    suggestWrap.hidden = items.length === 0;
+  }
+
+  async function fetchSuggestions(q) {
+    const url = `${REST_URL}?search=${encodeURIComponent(q)}&per_page=6&_fields=title,link,slug`;
+    const res = await fetch(url, { credentials: "same-origin" });
+    if (!res.ok) throw new Error("REST not ok");
+    return await res.json();
+  }
+
+  input?.addEventListener("input", () => {
+    const q = (input.value || "").trim();
+    if (q.length < 2) { hideSuggest(); return; }
+    if (q === lastQ) return;
+    lastQ = q;
+
+    clearTimeout(t);
+    t = setTimeout(async () => {
+      try {
+        const items = await fetchSuggestions(q);
+        showSuggest(items);
+      } catch (e) {
+        hideSuggest();
+      }
+    }, 180);
+  });
+
+  input?.addEventListener("blur", () => setTimeout(hideSuggest, 180));
+
+  const form = root.querySelector("form.tz-names-search");
+  form?.addEventListener("submit", () => {
+    const q = (input.value || "").trim();
+    if (!q) return;
+  });
+
+  // --------------------------------
+  // 2) Name of the Day (changes daily)
+  // --------------------------------
+  const pool = [
+    { name: "Aadhira", meaning: "Moonlight", gender: "Female", theme: "Nature", url: "/tamil-name-finder/aadhira/" },
+    { name: "Isai",    meaning: "Music",     gender: "Unisex", theme: "Arts",   url: "/tamil-name-finder/isai/" },
+    { name: "Nila",    meaning: "Moon",      gender: "Female", theme: "Nature", url: "/tamil-name-finder/nila/" },
+    { name: "Kavin",   meaning: "Poetic",    gender: "Male",   theme: "Classic",url: "/tamil-name-finder/kavin/" },
+    { name: "Iniya",   meaning: "Sweet",     gender: "Female", theme: "Modern", url: "/tamil-name-finder/iniya/" }
+  ];
+
+  function dayKeyLocal() {
+    const d = new Date();
+    return `${d.getFullYear()}-${String(d.getMonth()+1).padStart(2,"0")}-${String(d.getDate()).padStart(2,"0")}`;
+  }
+
+  function pickForToday() {
+    const key = dayKeyLocal();
+    let h = 0;
+    for (let i = 0; i < key.length; i++) h = (h * 31 + key.charCodeAt(i)) >>> 0;
+    return pool[h % pool.length];
+  }
+
+  const notd = pickForToday();
+  const elName = root.querySelector("[data-notd-name]");
+  const elMean = root.querySelector("[data-notd-meaning]");
+  const elGender = root.querySelector("[data-notd-gender]");
+  const elTheme = root.querySelector("[data-notd-theme]");
+  const elLink = root.querySelector("[data-notd-link]");
+
+  if (notd) {
+    if (elName) elName.textContent = notd.name;
+    if (elMean) elMean.textContent = `(${notd.meaning})`;
+    if (elGender) elGender.textContent = notd.gender;
+    if (elTheme) elTheme.textContent = notd.theme;
+    if (elLink) elLink.href = notd.url;
+  }
+})();
 </script>
