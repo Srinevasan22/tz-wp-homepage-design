@@ -52,7 +52,7 @@ Notes:
             data-names-search-page="/tamil-name-finder/"
             data-names-post-type="tamil_name"
             data-names-rest-base="tamil_name"
-            data-names-homecard-endpoint=""
+            data-names-homecard-endpoint="/wp-json/tz-name-pages/v1/name-of-day"
           >
             <!-- Search -->
             <form class="tz-names-search" action="/tamil-name-finder/" method="get" role="search" aria-label="Search Tamil baby names">
@@ -129,17 +129,17 @@ Notes:
                 <div class="tz-nod" id="tzNodCard" aria-live="polite">
                   <div class="tz-notd-kicker">NAME OF THE DAY</div>
 
-                  <div class="tz-notd-name" id="tzNodTitle">Loading…</div>
-                  <div class="tz-notd-meaning" id="tzNodMeaning"></div>
+                  <div class="tz-notd-name" id="tz-nod-title">Loading...</div>
+                  <div class="tz-notd-meaning" id="tz-nod-meaning"></div>
 
                   <dl class="tz-notd-dl">
                     <div class="tz-notd-row">
                       <dt>Gender</dt>
-                      <dd id="tzNodGender">—</dd>
+                      <dd id="tz-nod-gender"></dd>
                     </div>
                   </dl>
 
-                  <a class="tz-btn tz-btn-ghost tz-notd-btn" id="tzNodLink" href="#" style="pointer-events:none;opacity:.6;">View name page</a>
+                  <a class="tz-btn tz-btn-ghost tz-notd-btn" id="tz-nod-link" href="/tamil-name-finder/">View name page</a>
                 </div>
               </aside>
             </div>
@@ -1166,38 +1166,37 @@ Notes:
   // --------------------------------
   // 2) Name of the Day (from REST, changes daily)
   // --------------------------------
-  (async function () {
-    try {
-      const homecardEndpoint = root.dataset.namesHomecardEndpoint;
-      if (!homecardEndpoint) return;
-      const today = new Date().toISOString().slice(0, 10);
-      const endpoint = homecardEndpoint.includes("?")
-        ? `${homecardEndpoint}&d=${today}`
-        : `${homecardEndpoint}?d=${today}`;
-      const res = await fetch(endpoint, {
-        credentials: "same-origin"
-      });
-      if (!res.ok) return;
-      const data = await res.json();
-      if (!data || !data.ok || !data.nameOfDay) return;
+  function renderNameOfDay(data) {
+    const titleEl = document.getElementById("tz-nod-title");
+    const meaningEl = document.getElementById("tz-nod-meaning");
+    const genderEl = document.getElementById("tz-nod-gender");
+    const linkEl = document.getElementById("tz-nod-link");
 
-      const notd = data.nameOfDay;
-      const elName = root.querySelector("#tzNodTitle");
-      const elMean = root.querySelector("#tzNodMeaning");
-      const elGender = root.querySelector("#tzNodGender");
-      const elLink = root.querySelector("#tzNodLink");
+    if (!titleEl || !meaningEl || !genderEl || !linkEl) return;
 
-      if (elName) elName.textContent = notd.title || "—";
-      if (elMean) elMean.textContent = notd.meaning ? notd.meaning : "";
-      if (elGender) elGender.textContent = notd.gender || "—";
-      if (elLink && notd.url) {
-        elLink.href = notd.url;
-        elLink.style.pointerEvents = "";
-        elLink.style.opacity = "1";
-      }
-    } catch (e) {
-      // Fail silently.
+    if (!data || !data.title || !data.link) {
+      titleEl.textContent = "No name available";
+      meaningEl.textContent = "";
+      genderEl.textContent = "";
+      linkEl.setAttribute("href", "/tamil-name-finder/");
+      linkEl.textContent = "Browse names";
+      return;
     }
-  })();
+
+    titleEl.textContent = data.title;
+    meaningEl.textContent = data.meaning ? `(${data.meaning})` : "";
+    genderEl.textContent = data.gender ? data.gender : "";
+
+    linkEl.setAttribute("href", data.link);
+    linkEl.textContent = "View name page";
+  }
+
+  const endpoint = root.dataset.namesHomecardEndpoint;
+  if (endpoint) {
+    fetch(endpoint, { credentials: "same-origin" })
+      .then((res) => res.json())
+      .then((data) => renderNameOfDay(data))
+      .catch(() => renderNameOfDay(null));
+  }
 })();
 </script>
