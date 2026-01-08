@@ -8,7 +8,7 @@ Goals:
 - Keep SEO-friendly semantics (single H1, clear H2s, internal links)
 
 Notes:
-- Replace the placeholder image URLs (data-bg) with real media URLs (or keep gradients).
+- Replace the placeholder image URLs (inline --tz-bg) with real media URLs (or keep gradients).
 - Replace the placeholder links with your real paths.
 - Add data-names-homecard-endpoint to enable the “Name of the Day” REST fetch.
 -->
@@ -202,7 +202,7 @@ Notes:
           <a class="tz-story-media" href="/news/" aria-label="Open Tamil news">
             <span
               class="tz-story-img tz-story-img--one"
-              data-bg="/wp-content/uploads/placeholders/news-1.webp"
+              style="--tz-bg:url('https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?q=80&w=1964&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');"
               aria-hidden="true"></span>
           </a>
           <div class="tz-story-body">
@@ -215,7 +215,7 @@ Notes:
           <a class="tz-story-media" href="/news/" aria-label="Open Tamil news">
             <span
               class="tz-story-img tz-story-img--two"
-              data-bg="/wp-content/uploads/placeholders/news-2.webp"
+              style="--tz-bg:url('https://images.unsplash.com/photo-1618005198919-d3d4b5a92ead?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');"
               aria-hidden="true"></span>
           </a>
           <div class="tz-story-body">
@@ -228,7 +228,7 @@ Notes:
           <a class="tz-story-media" href="/news/" aria-label="Open Tamil news">
             <span
               class="tz-story-img tz-story-img--three"
-              data-bg="/wp-content/uploads/placeholders/news-3.webp"
+              style="--tz-bg:url('https://images.unsplash.com/photo-1618472609777-b038f1f04b8d?q=80&w=1964&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');"
               aria-hidden="true"></span>
           </a>
           <div class="tz-story-body">
@@ -570,23 +570,6 @@ Notes:
     height: 26rem;
   }
 
-  /* If you set data-bg to a valid URL, it becomes the background image */
-  .tz-card-media[data-bg]::before,
-  .tz-story-img[data-bg]::before {
-    content: "";
-    position: absolute;
-    inset: 0;
-    background-image: var(--tz-bg-url);
-    background-size: cover;
-    background-position: center;
-    opacity: 1;
-  }
-
-  .tz-card-media[data-bg] { background: #eaeaea; }
-  .tz-card-media[data-bg]::before { background-image: none; }
-
-  /* JS-free image bg: set via inline style variables (below) */
-
   .tz-card-media-purple {
     background:
       radial-gradient(1200px 300px at 20% 20%, rgba(255,255,255,.28), rgba(255,255,255,0) 55%),
@@ -910,25 +893,17 @@ Notes:
   .tz-story-img {
     display: block;
     height: 120px;
-    background:
-      radial-gradient(700px 180px at 20% 30%, rgba(255,255,255,.32), rgba(255,255,255,0) 55%),
-      linear-gradient(135deg, rgba(111,60,255,.22), rgba(111,60,255,.10));
-    position: relative;
-  }
-  .tz-story-img--one {
-    background:
-      radial-gradient(700px 180px at 15% 25%, rgba(255,255,255,.38), rgba(255,255,255,0) 55%),
-      linear-gradient(135deg, rgba(44,94,255,.32), rgba(96,62,255,.12));
-  }
-  .tz-story-img--two {
-    background:
-      radial-gradient(700px 180px at 20% 30%, rgba(255,255,255,.35), rgba(255,255,255,0) 55%),
-      linear-gradient(135deg, rgba(255,132,50,.24), rgba(255,210,120,.14));
-  }
-  .tz-story-img--three {
-    background:
-      radial-gradient(700px 180px at 18% 28%, rgba(255,255,255,.32), rgba(255,255,255,0) 55%),
-      linear-gradient(135deg, rgba(20,160,130,.26), rgba(110,230,200,.12));
+    width: 100%;
+    min-height: 120px;
+    flex: 0 0 auto;
+    border-radius: 14px;
+    background-color: #f4f1ff;
+    background-image:
+      linear-gradient(135deg, rgba(124,58,237,.25), rgba(168,85,247,.10)),
+      var(--tz-bg, none);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
   }
   .tz-story-body { padding: 10px 12px 12px; }
   .tz-story-title { margin: 0 0 6px; font-size: 1.45rem; font-weight: 900; }
@@ -1079,25 +1054,6 @@ Notes:
     .tz-grid-cards { grid-template-columns: 1fr; }
   }
 </style>
-
-<script>
-  // Optional helper: apply background images from data-bg attributes WITHOUT external dependencies.
-  // If you don’t want any JS on the page, you can delete this whole script.
-  (function(){
-    try {
-      var nodes = document.querySelectorAll('.tz-home [data-bg]');
-      nodes.forEach(function(n){
-        var url = n.getAttribute('data-bg');
-        if (!url) return;
-        // If the URL is still a placeholder, skip.
-        if (url.indexOf('/wp-content/uploads/') !== 0 && url.indexOf('http') !== 0) return;
-        n.style.backgroundImage = 'url(' + url + ')';
-        n.style.backgroundSize = 'cover';
-        n.style.backgroundPosition = 'center';
-      });
-    } catch(e) {}
-  })();
-</script>
 
 <script>
 (function () {
